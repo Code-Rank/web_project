@@ -98,41 +98,8 @@
         </style>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light gray_background_color">
-            <a class="logo_text" class="nav-link" href="#"><span class="orange_text_color" style="font-weight: bold;font-size: 25px;">Mind</span> <span style="color: white; font-weight: bold;font-size: 25px;">Free</span></a>
-            <button
-                class="navbar-toggler"
-                onclick="removeclass()"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-                style="background: white;"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto margin_item" id="top_menu">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">contact</a>
-                    </li>
-                    &nbsp; &nbsp; &nbsp;
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sign in</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-      
+       
+        <%- include("../includes/top_menu.ejs")%>  
         <div class="row">
             
                 <img src="img/index_image_1.jpg" alt="" srcset="" class="img-fluid"  />
@@ -271,55 +238,10 @@
             </div>
         </div>
         <div class="gray_background_color">
-            <div class="d-flex flex-column h-100">
-                <!-- FOR DEMO PURPOSE -->
-
-                <!-- FOOTER -->
-                <footer class="w-100 py-4 flex-shrink-0">
-                    <div class="container py-4">
-                        <div class="row gy-4 gx-5">
-                            <div class="col-lg-4 col-md-6">
-                                <h5 class="h1 text-white">
-                                    <a class="logo_text" class="nav-link" href="#"><span class="orange_text_color" style="font-weight: bold;">Mind</span> <span style="color: white; font-weight: bold;">Free</span></a>
-                                </h5>
-                                <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                                <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">MindFree.com</a></p>
-                            </div>
-                            <div class="col-lg-2 col-md-6">
-                                <h5 class="text-white mb-3">Quick links</h5>
-                                <ul class="list-unstyled text-muted">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Get started</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-2 col-md-6">
-                                <h5 class="text-white mb-3">Quick links</h5>
-                                <ul class="list-unstyled text-muted">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Get started</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <h5 class="text-white mb-3">Clink here to join us
-                                </h5>
-                                <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                                <form action="#">
-                                    <div class="input-group mb-3">
-                                        <a class="btn sign_up" style="color: white;">Sign up</a>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
+            <%- include("../includes/footer.ejs")%>
         </div>
     </body>
-    <%- include("../includes/footer.ejs")%>
+    
 
     <script>
         function removeclass() {
