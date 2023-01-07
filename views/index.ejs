@@ -6,6 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <%- include("../includes/head.ejs")%>
         <style>
+            body {
+                padding: 0%;
+            margin: 0%;
+            }
             #top_menu li a {
                 color: white;
             }
@@ -30,11 +34,72 @@
             .orange_background_color {
                 background: #fd6342;
             }
+            .read_more {
+                padding-left: 2vw;
+                padding-right: 2vw;
+                padding-top: 0.6vw;
+                padding-bottom: 0.6vw;
+                margin-left: 20%;
+                border-color: #252b3b;
+                background: #252b3b;
+                color: white;
+                border-radius: 2px;
+            }
+            .read_more:hover {
+                background: #fd6342;
+                border: #fd6342;
+                border-radius: 2px;
+            }
+            .name_heading {
+                text-align: center;
+            }
+            .icon {
+                font-size: 40px;
+                text-align: center;
+                margin-top: 5%;
+            }
+            .icon:hover {
+                color: #fd6342;
+            }
+            .section_1 .row {
+                margin-left: 6%;
+            }
+            .section_2 .row {
+                margin-left: 6%;
+            }
+            .service-text {
+                text-align: center;
+            }
+            .sign_up {
+                padding-left: 3vw;
+                padding-right: 3vw;
+                padding-top: 0.6vw;
+                padding-bottom: 0.6vw;
+
+                background: #fd6342;
+                border-color: #fd6342;
+
+                border-radius: 2px;
+                font-weight: bold;
+            }
+            .text_on_image{
+                position: absolute;
+                margin-top: 17%;
+                margin-left: 7%;
+
+            }
+            .text_on_image h3{
+               color: white;
+
+            }
+            #top_menu li a:hover{
+                color: #fd6342;
+            }
         </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light gray_background_color">
-            <a id="logo_text" class="nav-link" href="#"><span class="orange_text_color" style="font-weight: bold;">Mind</span> <span style="color: white; font-weight: bold;">Free</span></a>
+            <a class="logo_text" class="nav-link" href="#"><span class="orange_text_color" style="font-weight: bold;font-size: 25px;">Mind</span> <span style="color: white; font-weight: bold;font-size: 25px;">Free</span></a>
             <button
                 class="navbar-toggler"
                 onclick="removeclass()"
@@ -67,46 +132,55 @@
                 </ul>
             </div>
         </nav>
+      
         <div class="row">
-            <div class="col-12">
-                <img src="img/index_image_1.jpg" alt="" srcset="" class="img-fluid" />
+            
+                <img src="img/index_image_1.jpg" alt="" srcset="" class="img-fluid"  />
+                <div class="text_on_image">
+                    <h3>Let start your journy with us </h3> 
+                    <a class="btn sign_up" style="color: white;">Sign up</a> 
+                </div>
+                
+
+        </div>
+        <div class="container" >
+            <div class="row">
+                
+                <div class="col-7">
+                    <br />
+                    <br />
+                    <br />
+                    <div class="row">
+                        <h2 style="font-size: 2.2vw;">Read more about us</h2>
+                    </div>
+                    <div class="row">
+                        <p style="font-size: 1.5vw; text-align: justify;">
+                            d suas maiestatis ius. Nam posse doming cu, ea vis dicunt doctus persius, ut vis aperiri explicari. Cu persecuti consetetur cum, quo impetus epicurei indoctum ne. Ea cum omittam tacimates erroribus. Nam vis aperiri
+                            explicari. Cu consetetur cum, quo impetus epicurei indoctum ne. Ea cum omittam tacimates erroribus. Cu consetetur cum, quo impetus epicurei indoctum ne. Ea cum omittam tacimates erroribus.
+                        </p>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-4">
+                            <button class="btn" style="border: 1px solid #fd6342; padding: 5vh; font-size: 1.5vw;">hjj</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn" style="border: 1px solid #fd6342; padding: 5vh; font-size: 1.5vw;">hjj</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn" style="border: 1px solid #fd6342; padding: 5vh; font-size: 1.5vw;">hjj</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <img src="img/woman.png" alt="" class="img-fluid" srcset="" />
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-6">
-                <br />
-                <br />
-                <br />
-                <div class="row">
-                    <h2>Read more about us</h2>
-                </div>
-                <div class="row">
-                    <p style="size: 30px;">
-                        d suas maiestatis ius. Nam posse doming cu, ea vis dicunt doctus persius, ut vis aperiri explicari. Cu persecuti consetetur cum, quo impetus epicurei indoctum ne. Ea cum omittam tacimates erroribus. Nam vis aperiri
-                        explicari. Cu consetetur cum, quo impetus epicurei indoctum ne. Ea cum omittam tacimates erroribus. Cu consetetur cum, quo impetus epicurei indoctum ne. Ea cum omittam tacimates erroribus.
-                    </p>
-                </div>
-                <br />
-                <br />
-                <br />
-                <div class="row">
-                    <div class="col-4">
-                        <button class="btn" style="border: 1px solid #fd6342; padding: 5vh;">hjj</button>
-                    </div>
-                    <div class="col-4">
-                        <button class="btn" style="border: 1px solid #fd6342; padding: 5vh;">hjj</button>
-                    </div>
-                    <div class="col-4">
-                        <button class="btn" style="border: 1px solid #fd6342; padding: 5vh;">hjj</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-5">
-                <img src="img/woman.png" alt="" class="img-fluid" srcset="" />
-            </div>
-        </div>
-        <div class="row gray_background_color">
+        
+        <div class="gray_background_color section_1">
             <div class="col-12">
                 <br />
                 <br />
@@ -115,37 +189,133 @@
                 <br />
             </div>
 
-            <div class="row" >
-               <style>
-                .card{
-                    margin-left: 90px;
-                }
-               </style>
+            <div class="row">
+                <style></style>
                 <div class="col-sm-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="img/woman.png" alt="Card image cap" height="200px"//>
+                        <img class="card-img-top" src="img/woman.png" alt="Card image cap" height="200px" />
                         <div class="card-body">
+                            <h4 class="name_heading">Name</h4>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <button class="read_more">Read more</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="img/woman.png" alt="Card image cap" height="200px"/>
+                        <img class="card-img-top" src="img/woman.png" alt="Card image cap" height="200px" />
                         <div class="card-body">
+                            <h4 class="name_heading">Name</h4>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <button class="read_more">Read more</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="img/woman.png" alt="Card image cap" height="200px"/ />
+                        <img class="card-img-top" src="img/woman.png" alt="Card image cap" height="200px" />
                         <div class="card-body">
+                            <h4 class="name_heading">Name</h4>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                         <button >View</button>
+                            <button class="read_more">Read more</button>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div style="background: rgb(248, 244, 244);" class="section_2">
+            <div class="col-12">
+                <br />
+                <br />
+                <h2 style="color: #252b3b; text-align: center;">OUR SERVICES</h2>
+                <br />
+                <br />
+            </div>
+
+            <div class="row">
+                <style></style>
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <i class="fa fa-home icon"></i>
+                        <div class="card-body">
+                            <h4 class="name_heading">Name</h4>
+                            <p class="service-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <i class="fa fa-home icon"></i>
+                        <div class="card-body">
+                            <h4 class="name_heading">Name</h4>
+                            <p class="service-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <i class="fa fa-home icon"></i>
+                        <div class="card-body">
+                            <h4 class="name_heading">Name</h4>
+                            <p class="service-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div class="gray_background_color">
+            <div class="d-flex flex-column h-100">
+                <!-- FOR DEMO PURPOSE -->
+
+                <!-- FOOTER -->
+                <footer class="w-100 py-4 flex-shrink-0">
+                    <div class="container py-4">
+                        <div class="row gy-4 gx-5">
+                            <div class="col-lg-4 col-md-6">
+                                <h5 class="h1 text-white">
+                                    <a class="logo_text" class="nav-link" href="#"><span class="orange_text_color" style="font-weight: bold;">Mind</span> <span style="color: white; font-weight: bold;">Free</span></a>
+                                </h5>
+                                <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                                <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">MindFree.com</a></p>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <h5 class="text-white mb-3">Quick links</h5>
+                                <ul class="list-unstyled text-muted">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Get started</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <h5 class="text-white mb-3">Quick links</h5>
+                                <ul class="list-unstyled text-muted">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Get started</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5 class="text-white mb-3">Clink here to join us
+                                </h5>
+                                <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                                <form action="#">
+                                    <div class="input-group mb-3">
+                                        <a class="btn sign_up" style="color: white;">Sign up</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
     </body>
