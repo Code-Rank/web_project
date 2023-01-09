@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6/index.global.min.js"></script>
+  
+    
+    
+ <%- include("../partial/head.ejs") %> 
+    <title>Document</title>
+</head>
+<style>
+   body {
+                padding: 0%;
+            margin: 0%;
+            }
+            #top_menu li a {
+                color: white;
+            }
+            .margin_item {
+                margin-left: 60%;
+            }
+            .margin_item li {
+                margin-left: 10px;
+            }
+            .orange_text_color {
+                color: #fd6342;
+            }
+            .gray_text_color {
+                color: #252b3b;
+            }
+            .orange_text_color {
+                color: #fd6342;
+            }
+            .gray_background_color {
+                background: #252b3b;
+            }
+            .orange_background_color {
+                background: #fd6342;
+            }
+         
+            
+           
+            .sign_up {
+                padding-left: 3vw;
+                padding-right: 3vw;
+                padding-top: 0.6vw;
+                padding-bottom: 0.6vw;
+
+                background: #fd6342;
+                border-color: #fd6342;
+
+                border-radius: 2px;
+                font-weight: bold;
+            }
+         
+          
+            #top_menu li a:hover{
+                color: #fd6342;
+            }
+            #calendar{
+              width: 90%;
+              margin-left: 5%;
+              
+            }
+            #btn{
+              padding-left: 2vw;
+                padding-right: 2vw;
+                padding-top: 0.6vw;
+                padding-bottom: 0.6vw;
+              background:#fd6342;
+              color:white;
+              margin-left: 83%;
+            }
+            .cards {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 90%;
+            margin-left: 5%;
+        }
+
+
+        </style>
+
+
+<body>
+       <%- include("../partial/top_menu.ejs")%>  
+       <br><br><br>
+       <div class="p-card bg-white p-2 rounded px-3 cards">
+        <div class="row">
+            <div class="col-2" style="">
+                <img src="/img/woman.png" class="rounded float-left" width="100px" />
+            </div>
+
+            <div class="col-7">
+                <h3 style="color: #fd6342;">Ali hassan</h3>
+                <p style="text-align: justify;">
+                    Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviewsIncrease confidence with
+                    trustpilot reviews
+                </p>
+                <p>City: Lahore</p>
+                <div class="rating"></div>
+            </div>
+        </div>
+       
+        <br />
+    </div>
+    <br><br><br>
+       <div id="calendar"></div>
+      <br><br>
+      <a href="" class="btn" id="btn">Proceed to pay</a>
+    <br><br><br>
+   
+    <div class="gray_background_color">
+        <%- include("../partial/footer.ejs")%>
+    </div> 
+    
+</body>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+      },
+      initialDate: '2020-09-12',
+      navLinks: true, // can click day/week names to navigate views
+      businessHours: true, // display business hours
+      editable: true,
+      selectable: true,
+      events: [
+        {
+          title: 'Business Lunch',
+          start: '2020-09-03T13:00:00',
+          constraint: 'businessHours'
+        },
+        {
+          title: 'Meeting',
+          start: '2020-09-13T11:00:00',
+          constraint: 'availableForMeeting', // defined below
+          color: '#257e4a'
+        },
+        {
+          title: 'Conference',
+          start: '2020-09-18',
+          end: '2020-09-20'
+        },
+        {
+          title: 'Party',
+          start: '2020-09-29T20:00:00'
+        },
+
+        // areas where "Meeting" must be dropped
+        {
+          groupId: 'availableForMeeting',
+          start: '2020-09-11T10:00:00',
+          end: '2020-09-11T16:00:00',
+          display: 'background'
+        },
+        {
+          groupId: 'availableForMeeting',
+          start: '2020-09-13T10:00:00',
+          end: '2020-09-13T16:00:00',
+          display: 'background'
+        },
+
+        // red areas where no events can be dropped
+        {
+          start: '2020-09-24',
+          end: '2020-09-28',
+          overlap: false,
+          display: 'background',
+          color: '#ff9f89'
+        },
+        {
+          start: '2020-09-06',
+          end: '2020-09-08',
+          overlap: false,
+          display: 'background',
+          color: '#ff9f89'
+        }
+      ]
+    });
+
+    calendar.render();
+  });
+</script>
+
+<script>
+
+
+</script>
+
+</html>

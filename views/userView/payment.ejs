@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6/index.global.min.js"></script>
+  
+    
+    
+ <%- include("../partial/head.ejs") %> 
+    <title>Document</title>
+</head>
+<style>
+   body {
+                padding: 0%;
+            margin: 0%;
+            }
+            #top_menu li a {
+                color: white;
+            }
+            .margin_item {
+                margin-left: 60%;
+            }
+            .margin_item li {
+                margin-left: 10px;
+            }
+            .orange_text_color {
+                color: #fd6342;
+            }
+            .gray_text_color {
+                color: #252b3b;
+            }
+            .orange_text_color {
+                color: #fd6342;
+            }
+            .gray_background_color {
+                background: #252b3b;
+            }
+            .orange_background_color {
+                background: #fd6342;
+            }
+         
+            
+           
+            .sign_up {
+                padding-left: 3vw;
+                padding-right: 3vw;
+                padding-top: 0.6vw;
+                padding-bottom: 0.6vw;
+
+                background: #fd6342;
+                border-color: #fd6342;
+
+                border-radius: 2px;
+                font-weight: bold;
+            }
+         
+          
+            #top_menu li a:hover{
+                color: #fd6342;
+            }
+            #calendar{
+              width: 90%;
+              margin-left: 5%;
+              
+            }
+            #btn{
+              padding-left: 2vw;
+                padding-right: 2vw;
+                padding-top: 0.6vw;
+                padding-bottom: 0.6vw;
+              background:#fd6342;
+              color:white;
+              margin-left: 83%;
+            }
+            .cards {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 20%;
+            margin-left: 5%;
+        }
+
+
+        </style>
+
+
+<body>
+       <%- include("../partial/top_menu.ejs")%>  
+       <br><br><br>
+       <div class="p-card bg-white p-2 rounded px-3 cards">
+        <div class="row">
+            <div class="col-12">
+                <h5>
+                    Payemnt summary 
+                </h5>
+            </div>
+        </div>
+       <div class="row">
+
+            <div class="col-5" style="text-align: center;">
+                <img src="/img/woman.png" alt="" width="80px" >
+            </div>
+            <div class="col-7">
+                <div class="row">
+                    <p>Ali hassan</p>
+            
+                    <p>City:Lahore</p>
+                </div>
+                <div class="row">
+                    
+                </div>
+            </div>
+
+       </div>
+       <div class="row">
+            <div class="col-6">
+                
+            </div>
+            <div class="col-6">
+                
+            </div>
+       </div>
+       </div>
+    <br><br><br>
+      
+   
+    <div class="gray_background_color">
+        <%- include("../partial/footer.ejs")%>
+    </div> 
+    
+</body>
+
+
+
+</html>

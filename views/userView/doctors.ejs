@@ -1,172 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6/index.global.min.js"></script>
-  
-    
-    
- <%- include("../partial/head.ejs") %> 
-    <title>Document</title>
-</head>
-<style>
-   body {
-                padding: 0%;
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6/index.global.min.js"></script>
+
+        <%- include("../partial/head.ejs") %>
+        <title>Document</title>
+    </head>
+    <style>
+        body {
+            padding: 0%;
             margin: 0%;
-            }
-            #top_menu li a {
-                color: white;
-            }
-            .margin_item {
-                margin-left: 60%;
-            }
-            .margin_item li {
-                margin-left: 10px;
-            }
-            .orange_text_color {
-                color: #fd6342;
-            }
-            .gray_text_color {
-                color: #252b3b;
-            }
-            .orange_text_color {
-                color: #fd6342;
-            }
-            .gray_background_color {
-                background: #252b3b;
-            }
-            .orange_background_color {
-                background: #fd6342;
-            }
-         
-            
-           
-            .sign_up {
-                padding-left: 3vw;
-                padding-right: 3vw;
-                padding-top: 0.6vw;
-                padding-bottom: 0.6vw;
+        }
+        #top_menu li a {
+            color: white;
+        }
+        .margin_item {
+            margin-left: 60%;
+        }
+        .margin_item li {
+            margin-left: 10px;
+        }
+        .orange_text_color {
+            color: #fd6342;
+        }
+        .gray_text_color {
+            color: #252b3b;
+        }
+        .orange_text_color {
+            color: #fd6342;
+        }
+        .gray_background_color {
+            background: #252b3b;
+        }
+        .orange_background_color {
+            background: #fd6342;
+        }
 
-                background: #fd6342;
-                border-color: #fd6342;
-
-                border-radius: 2px;
-                font-weight: bold;
-            }
-         
-          
-            #top_menu li a:hover{
-                color: #fd6342;
-            }
-            #calendar{
-              width: 90%;
-              margin-left: 5%;
-            }
-            #booking{
-              padding-left: 3vw;
-                padding-right: 3vw;
-                padding-top: 0.6vw;
+        .sign_up {
+            padding-left: 3vw;
+            padding-right: 3vw;
+            padding-top: 0.6vw;
             padding-bottom: 0.6vw;
-              background:#fd6342;
-              color:white;
-              margin: 3px;
-            }
-            #view_profile{
-                padding-left: 2vw;
-                padding-right: 2vw;
-                padding-top: 0.6vw;
-                padding-bottom: 0.6vw;
-                border: 1px solid #fd6342;
-                
-            }
-            #view_profile:hover{
-                padding-left: 2vw;
-                padding-right: 2vw;
-                padding-top: 0.6vw;
-                padding-bottom: 0.6vw;
-                border: 1px solid #fd6342;
-                background: #fd6342;
-                color: white;
-            }
-            .cards{
-                
-                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-            }
 
+            background: #fd6342;
+            border-color: #fd6342;
 
-        </style>
+            border-radius: 2px;
+            font-weight: bold;
+        }
 
+        #top_menu li a:hover {
+            color: #fd6342;
+        }
+        #calendar {
+            width: 90%;
+            margin-left: 5%;
+        }
+        #booking {
+            padding-left: 3vw;
+            padding-right: 3vw;
+            padding-top: 0.6vw;
+            padding-bottom: 0.6vw;
+            background: #fd6342;
+            color: white;
+            margin: 3px;
+        }
+        #view_profile {
+            padding-left: 2vw;
+            padding-right: 2vw;
+            padding-top: 0.6vw;
+            padding-bottom: 0.6vw;
+            border: 1px solid #fd6342;
+        }
+        #view_profile:hover {
+            padding-left: 2vw;
+            padding-right: 2vw;
+            padding-top: 0.6vw;
+            padding-bottom: 0.6vw;
+            border: 1px solid #fd6342;
+            background: #fd6342;
+            color: white;
+        }
+        .cards {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #btn{
+            padding-left: 2vw;
+            padding-right: 2vw;
+            padding-top: 0.6vw;
+            padding-bottom: 0.6vw;
+            border: 1px solid #fd6342;
+            background: #fd6342;
+            color: white; 
+        }
+    </style>
 
-<body>
-       <%- include("../partial/top_menu.ejs")%>  
-       <br><br><br>
-       <!-- <div id="calendar"></div>
+    <body>
+        <%- include("../partial/top_menu.ejs")%>
+        <br />
+        <br />
+        <br />
+        <!-- <div id="calendar"></div>
       <br><br> -->
-      
-    <div class="container mt-5 mb-5">
-        <div class="row">
+
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex flex-row justify-content-between align-items-center filters">
+                        <h6>Showing 291 tasks</h6>
+                        <div class="right-sort">
+                            <div class="sort-by">
+                                <form action="" method="get">
+                                    
+                                    <input type="text" name="" id="" placeholder="First name">
+                                    <input type="text" name="" id="" placeholder="Last name">
+                                    <input type="text" name="" id="" placeholder="City">
+                                    <input type="submit" class="btn" id="btn" name="Search" >
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
             <div class="col-md-12">
-                <div class="d-flex flex-row justify-content-between align-items-center filters">
-                    <h6>Showing 291 tasks</h6>
-                    <div class="right-sort">
-                        <div class="sort-by"><span class="mr-1">Sort by:</span><a href="#">Most popular</a><i class="fa fa-angle-down ml-1"></i><button class="btn btn-outline-dark btn-sm ml-3 filter" type="button">Filters&nbsp;<i class="fa fa-flask"></i></button></div>
+                <div class="p-card bg-white p-2 rounded px-3 cards">
+                    <div class="row">
+                        <div class="col-2" style="">
+                            <img src="/img/woman.png" class="rounded float-left" width="100px" />
+                        </div>
+
+                        <div class="col-7">
+                            <h3 style="color: #fd6342;">Ali hassan</h3>
+                            <p style="text-align: justify;">
+                                Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviewsIncrease confidence with
+                                trustpilot reviews
+                            </p>
+
+                            <div class="rating"></div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between stats">
+                        <div></div>
+                        <div class="align-items-center">
+                            <a href="" class="btn" id="view_profile">View profile</a><br />
+                            <a href="" class="btn" id="booking">Booking</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-      
-        <div class="col-md-12">
-            <div class="p-card bg-white p-2 rounded px-3 cards">
-                <div class="d-flex align-items-center credits"><img src="https://i.imgur.com/hlz6G90.png" width="16px"><span class="text-black-50 ml-2">2 credits</span></div>
-                <h5 class="mt-2">Increase confidence with trustpilot reviews</h5><span class="badge badge-primary py-1 mb-2">integrations</span><span class="d-block mb-5">Some kind of short descriptions can go here to better recommend tasks.</span>
-                <div class="d-flex justify-content-between stats">
-                    <div><i class="fa fa-calendar-o"></i><span class="ml-2">2 days ago</span></div>
-                    <div class="  align-items-center">
-                       <a href="" class="btn " id="view_profile">View profile</a><br>
-                       <a href="" class="btn"id="booking">Booking</a>
+                <br>
+                <div class="p-card bg-white p-2 rounded px-3 cards">
+                    <div class="row">
+                        <div class="col-2" style="">
+                            <img src="/img/woman.png" class="rounded float-left" width="100px" />
+                        </div>
+
+                        <div class="col-7">
+                            <h3 style="color: #fd6342;">Ali hassan</h3>
+                            <p style="text-align: justify;">
+                                Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviewsIncrease confidence with
+                                trustpilot reviews
+                            </p>
+
+                            <div class="rating"></div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between stats">
+                        <div></div>
+                        <div class="align-items-center">
+                            <a href="" class="btn" id="view_profile">View profile</a><br />
+                            <a href="" class="btn" id="booking">Booking</a>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                <div class="d-flex justify-content-end text-right mt-2">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
+            <br />
+            <br />
+            <br />
+
+           
         </div>
-        <br>
-        <div class="col-md-12">
-            <div class="p-card bg-white p-2 rounded px-3 cards">
-                <div class="d-flex align-items-center credits"><img src="https://i.imgur.com/hlz6G90.png" width="16px"><span class="text-black-50 ml-2">2 credits</span></div>
-                <h5 class="mt-2">Increase confidence with trustpilot reviews</h5><span class="badge badge-primary py-1 mb-2">integrations</span><span class="d-block mb-5">Some kind of short descriptions can go here to better recommend tasks.</span>
-                <div class="d-flex justify-content-between stats">
-                    <div><i class="fa fa-calendar-o"></i><span class="ml-2">2 days ago</span></div>
-                    <div class="d-flex flex-row align-items-center">
-                        <div class="profiles"><img class="rounded-circle" src="https://i.imgur.com/KcxKRBm.jpg" width="30"><img class="rounded-circle" src="https://i.imgur.com/DukIAef.jpg" width="30"><img class="rounded-circle" src="https://i.imgur.com/UL0GS75.jpg" width="30"></div><span class="ml-3">16</span></div>
-                </div>
+         <div class="gray_background_color">
+                <%- include("../partial/footer.ejs")%>
             </div>
-        </div>
-      
-      
-    </div>
-    <div class="d-flex justify-content-end text-right mt-2">
-        <nav>
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
-            </ul>
-        </nav>
-    </div>
-    </div>
-    <br><br><br>
-   
-    <div class="gray_background_color">
-        <%- include("../partial/footer.ejs")%>
-    </div> 
-    
-</body>
-
-
-
-
+    </body>
 </html>
