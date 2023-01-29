@@ -13,6 +13,12 @@ app.use(express.static(path.join(process.cwd(),"public")));
 app.get("/",(req,res)=>{
     res.render("index.ejs");
 });
+app.get("/login",(req,res)=>{
+    res.render("login.ejs");
+});
+app.get("/signup",(req,res)=>{
+    res.render("signUp.ejs");
+});
 
 app.use("/userView",userRouter);
 app.use("/adminView",adminRouter);

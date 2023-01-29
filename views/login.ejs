@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include("./partial/head.ejs")%>
+        <style>
+            body {
+                padding: 0%;
+                margin: 0%;
+            }
+            #top_menu li a {
+                color: white;
+            }
+            .margin_item {
+                margin-left: 60%;
+            }
+            .margin_item li {
+                margin-left: 10px;
+            }
+            .orange_text_color {
+                color: #fd6342;
+            }
+            .gray_text_color {
+                color: #252b3b;
+            }
+            .orange_text_color {
+                color: #fd6342;
+            }
+            .gray_background_color {
+                background: #252b3b;
+            }
+            .orange_background_color {
+                background: #fd6342;
+            }
+            
+            
+            
+         
+            .sign_up {
+                padding-left: 3vw;
+                padding-right: 3vw;
+                padding-top: 0.6vw;
+                padding-bottom: 0.6vw;
+
+                background: #fd6342;
+                border-color: #fd6342;
+
+                border-radius: 2px;
+                font-weight: bold;
+            }
+            
+            #top_menu li a:hover {
+                color: #fd6342;
+            }
+            hr{
+                width: 40%;
+                background: #fd6342;
+                height: 3px;
+            }
+          
+            .form_input:focus{
+               
+                outline-color: #fd6342;
+            }
+            form{
+                margin-top: 10%;
+            }
+            form input{
+                margin: 10px;
+            }
+            button[type=submit]{
+                padding: 7px;
+                border: #fd6342;
+            }
+
+        </style>
+    </head>
+    <body>
+        <%- include("./partial/top_menu.ejs")%>
+        <br />
+        <br />
+        <div class="col d-flex justify-content-center">
+            
+                <div class="card card-inverse card-primary text-center">
+                    <div class="card-block">
+                        <br>
+                        <h4 class="card-title orange_text_color" style="font-size:30px;" >Login</h4>
+                        <hr>
+                        
+                        <form action="">
+                           
+                            
+                           <input type="email" name="" id="" class="col-md-8 form_input">
+                           <input type="password" name="" id="" class="col-md-8 form_input">
+                           <div class="col-md-12  " style="text-align: justify;margin-left: 65px;" >
+                            <span style="color:#252b3b; font-size: 15px;">Did you </span>
+                            <span ><a href="" style="color: #fd6342; font-size: 15px;">Forget your password?</a></span>
+                           </div>
+                           <br><br>
+                           <div class="col-md-12 ">
+                            <button type="submit" class="col-md-6 orange_background_color"  style="text-align: left;"><i class="fas fa-check-circle" style="color:white;font-size: 30px;"></i> <span style="margin-left:40px ;color: white;font-weight: bold;font-size: 20px;">Continue</span> </button>
+
+                            
+                           </div>
+                          
+                           <br><br><br><br>
+                 
+
+                        </form>
+                    </div>
+                </div>
+            
+        </div>
+        <br><br><br><br>
+
+        <div class="gray_background_color">
+            <%- include("./partial/footer.ejs")%>
+        </div>
+    </body>
+</html>
