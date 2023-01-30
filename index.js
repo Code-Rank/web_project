@@ -1,10 +1,27 @@
 import express from "express";
 import userRouter from "./routes/userRoute/userRoutes.js";
 import adminRouter from "./routes/adminRoute/adminRoutes.js";
+import mongoose  from "mongoose";
+import {connection}  from "./database/db.js";
+
+
+
 import path from "path";
 import ejs from "ejs";
+
 const app =express();
 const port=3001;
+
+//database connection
+const uri="mongodb://127.0.0.1:27017/MindFree_db";
+mongoose.set("strictQuery","false");
+connection(uri);
+
+
+
+
+
+
 
 app.set("view engin","ejs");
 app.set("views",path.join(process.cwd(),"views"));
