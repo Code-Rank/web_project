@@ -37,16 +37,22 @@ const login= async(req,res)=>
 {
   let {email,password}=req.body;
   //res.send(req.body);
-   usersModel.find({email:email,password:password},(error,result)=>{
-/*    if(result){
+   usersModel.find({email:email,password:password},"email user_type",(error,result)=>{
+    if(result.length>0){
+          req.session.email=email;
+          req.session.user_type=result[0].user_type;
+          /* console.log(result);
+          console.log(req.session.email);
+          console.log(req.session.user_type); */
           req.flash("message","login successfully");
-          res.redirect("../login");
+          res.redirect("../user/user_appointment");
    }else{
             req.flash("message","login attampt faild");
             res.redirect("../login");
-   }  */ 
-   res.send(result);
-   res.send(error);  
+   }  
+   //res.send(result);
+   //res.send(error);  
+   //console.log(result);
 }) ;
 
     

@@ -81,21 +81,22 @@
         <%- include("./partial/top_menu.ejs")%>
         <br />
         <br />
-        
-        <%if(message.length>0){%>
-        <div class="alert alert-success " role="alert" style="width:30%;margin-left: 35%;">
-            <div>
-                
-                <%=message%> 
-            </div>
-          </div>
-        <%}else{%>
+        <%if(message=="login attampt faild"){%>
             <div class="alert alert-danger " role="alert" style="width:30%;margin-left: 35%;">
                 <div>
                     
                     <%=message%> 
                 </div>
               </div>
+        
+        
+        <%}else if(message.length>0){%>
+        <div class="alert alert-success " role="alert" style="width:30%;margin-left: 35%;">
+            <div>
+                
+                <%=message%> 
+            </div>
+          </div>
         <%}%>
         <div class="col d-flex justify-content-center">
 

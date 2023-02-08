@@ -1,5 +1,7 @@
 import express from "express";
 import authRouters from "./routes/authRouter/authRoutes.js";
+import userRouters from "./routes/userRoute/userRoutes.js";
+import adminRoutes from "./routes/adminRoute/adminRoutes.js";
 import mongoose  from "mongoose";
 import {connection}  from "./database/db.js";
 import flash from "connect-flash";
@@ -29,12 +31,20 @@ app.use(flash());
 
 
 
+
 app.set("view engin","ejs");
 app.set("views",path.join(process.cwd(),"views"));
 app.use(express.static(path.join(process.cwd(),"public")));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-
+app.use(function(req, res, next) {
+    //res.locals.user["user_type"] = req.session.user_type;
+    res.locals.user ={
+        email:req.session.email,
+        user_type:req.session.user_type
+    };
+    next();
+  });
 app.get("/",(req,res)=>{
     res.render("index.ejs");
 });
@@ -45,7 +55,8 @@ app.get("/signup",(req,res)=>{
     res.render("signUp.ejs",{message:req.flash("message")});
 });
 app.use("/auth",authRouters);
-
+app.use("/user",userRouters);
+app.use("/admin",adminRoutes);
 
 
 app.listen(port,(req,res)=>{

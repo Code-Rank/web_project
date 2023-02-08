@@ -1,5 +1,5 @@
 import express from "express";
-import * as users from "../../controllers/userController/userControllers.js";
+//import * as users from "../../controllers/userController/userControllers.js";
 const router=express.Router();
 
 router.get("/user_appointment",(req,res)=>{
@@ -20,8 +20,7 @@ router.get("/payment",(req,res)=>{
 });
 
 
-router.get("/create",users.createUser);
-router.get("/find/:name/:password",users.findUser);
+
 
 export default router;
 
