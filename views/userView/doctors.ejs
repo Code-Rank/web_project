@@ -110,7 +110,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="d-flex flex-row justify-content-between align-items-center filters">
-                        <h6>Showing 291 tasks</h6>
+                        <h6>Showing <%=result.length%> records</h6>
                         <div class="right-sort">
                             <div class="sort-by">
                                 <form action="" method="get">
@@ -128,6 +128,7 @@
             </div>
 
             <div class="col-md-12">
+               <%result.forEach((result)=>{%>
                 <div class="p-card bg-white p-2 rounded px-3 cards">
                     <div class="row">
                         <div class="col-2" style="">
@@ -135,7 +136,7 @@
                         </div>
 
                         <div class="col-7">
-                            <h3 style="color: #fd6342;">Ali hassan</h3>
+                            <h3 style="color: #fd6342;"><%=result.first_name%> <%=result.last_name%></h3>
                             <p style="text-align: justify;">
                                 Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviewsIncrease confidence with
                                 trustpilot reviews
@@ -147,37 +148,17 @@
                     <div class="d-flex justify-content-between stats">
                         <div></div>
                         <div class="align-items-center">
-                            <a href="" class="btn" id="view_profile">View profile</a><br />
+                            <a href="/user/doctor_profile?id=<%=result._id%>" class="btn" id="view_profile">View profile</a><br />
                             <a href="" class="btn" id="booking">Booking</a>
                         </div>
                     </div>
                 </div>
                 <br>
-                <div class="p-card bg-white p-2 rounded px-3 cards">
-                    <div class="row">
-                        <div class="col-2" style="">
-                            <img src="/img/woman.png" class="rounded float-left" width="100px" />
-                        </div>
-
-                        <div class="col-7">
-                            <h3 style="color: #fd6342;">Ali hassan</h3>
-                            <p style="text-align: justify;">
-                                Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviewsIncrease confidence with
-                                trustpilot reviews
-                            </p>
-
-                            <div class="rating"></div>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between stats">
-                        <div></div>
-                        <div class="align-items-center">
-                            <a href="" class="btn" id="view_profile">View profile</a><br />
-                            <a href="" class="btn" id="booking">Booking</a>
-                        </div>
-                    </div>
-                    <br />
-                </div>
+               <%});%>
+                
+                
+                <br>
+               
                 <div class="d-flex justify-content-end text-right mt-2">
                     <nav>
                         <ul class="pagination">

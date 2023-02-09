@@ -94,7 +94,8 @@
         <br />
         <br />
         <br />
-    <div class="row">
+    <form action="/user/payment_process" method="post">
+        <div class="row">
         <div class="col-5">
             <div class="p-card bg-white p-2 rounded px-3 card_1">
                 <div class="row">
@@ -126,7 +127,7 @@
                         Date
                     </div>
                     <div class="col-5">
-                        12-12-12
+                        <%=appointment_date%>
                     </div>
                 </div>
                 <div class="row">
@@ -134,7 +135,7 @@
                         Time
                     </div>
                     <div class="col-5">
-                        9am
+                        <%=appointment_time%>
                     </div>
                 </div>
                 <div class="row">
@@ -174,22 +175,25 @@
                 </div>
             </div>
             <br>
-            <form action="" method="post">
+           
                 <div class="row">
+                    <input type="text" name="appointment_date" id="appointment_date" hidden value="<%=appointment_date%>">
+                    <input type="text" name="appointment_time" id="appointment_time" hidden value="<%=appointment_time%>">
+                    <input type="text" name="doctor_id" id="doctor_id" hidden value="<%=doctor_id%>">
                     <div class="col-5">
-                     <input type="text" name="" id="" placeholder="First name" size="23vw">
+                     <input type="text" name="first_name" id="first_name" placeholder="First name" size="23vw">
                     </div>
                     <div class="col-5">
-                        <input type="text" name="" id="" placeholder="Last name" size="20vw">
+                        <input type="text" name="last_name" id="last_name" placeholder="Last name" size="20vw">
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-5">
-                     <input type="text" name="" id="" placeholder="First name" size="23vw">
+                     <input type="email" name="email" id="email" placeholder="Email" size="23vw">
                     </div>
                     <div class="col-5">
-                        <input type="text" name="" id="" placeholder="Last name" size="20vw">
+                        <input type="text" name="phone" id="phone" placeholder="Phone" size="20vw">
                     </div>
                 </div>
                 <br><br>
@@ -203,28 +207,28 @@
                 <br>
                 <div class="row">
                     <div class="col-5">
-                     <input type="text" name="" id="" placeholder="Name on card" size="23vw">
+                     <input type="text" name="card_name" id="" placeholder="Name on card" size="23vw">
                     </div>
                     <div class="col-5">
-                        <input type="text" name="" id="" placeholder="Card no" size="20vw">
+                        <input type="text" name="card_no" id="" placeholder="Card no" size="20vw">
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-3">
-                     <input type="text" name="" id="" placeholder="Expiry year" size="12vw">
+                     <input type="text" name="expiry_year" id="" placeholder="Expiry year" size="12vw">
                     </div>
                     <div class="col-3">
-                        <input type="text" name="" id="" placeholder="Expiry month" size="12vw">
+                        <input type="text" name="expiry_month" id="" placeholder="Expiry month" size="12vw">
                     </div>
                     <div class="col-3">
-                        <input type="text" name="" id="" placeholder="CVV" size="12vw">
+                        <input type="text" name="cvv" id="" placeholder="CVV" size="12vw">
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-1">
-                     <input type="checkbox" name="" id="">
+                     <input type="checkbox" name="agree" id="agree">
                     </div>
                     <div class="col-10">
                         I have read and confirm <a href="">Term & conditions</a>
@@ -233,14 +237,16 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <a href="" class="btn" id="btn">Confirm and pay </a>
+                        <input type="submit" value="Confirm and pay" name="submit" class="btn" id="btn">
+                        <!-- <a href="" class="btn" id="btn">Confirm and pay </a> -->
                     </div>
                 </div>
                 
-            </form>
+           
         </div>
     </div>
-    </div>
+       </div>
+    </form>
         <br />
         <br />
         <br />
