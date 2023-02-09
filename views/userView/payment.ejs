@@ -68,8 +68,6 @@
             color: white;
             margin-left: 30%;
             margin-top: 7%;
-
-            
         }
         .card_1 {
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -81,12 +79,9 @@
             width: 100%;
             margin-left: 5%;
         }
-        input{
-          
-          outline-color: #fd6342;
+        input {
+            outline-color: #fd6342;
         }
-       
-    
     </style>
 
     <body>
@@ -94,159 +89,170 @@
         <br />
         <br />
         <br />
-    <form action="/user/payment_process" method="post">
-        <div class="row">
-        <div class="col-5">
-            <div class="p-card bg-white p-2 rounded px-3 card_1">
-                <div class="row">
-                    <div class="col-12">
-                        <h5>
-                            Payemnt summary
-                        </h5>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-5" style="text-align: center;">
-                        <img src="/img/woman.png" alt="" width="80px" />
-                    </div>
-                    <div class="col-7">
+        <form action="/user/payment_process" method="post">
+            <div class="row">
+                <div class="col-5">
+                    <div class="p-card bg-white p-2 rounded px-3 card_1">
                         <div class="row">
                             <div class="col-12">
-                                Ali Hassan
+                                <h5>
+                                    Payemnt summary
+                                </h5>
                             </div>
-                            <div class="col-12">
-                                City: lahore
+                        </div>
+                        <div class="row">
+                            <div class="col-5" style="text-align: center;">
+                                <img src="/img/woman.png" alt="" width="80px" />
                             </div>
-                
+                            <div class="col-7">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <%=result[0].first_name%> <%=result[0].last_name%> 
+                                    </div>
+                                    <div class="col-12">
+                                        City: lahore
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-7">
+                                Date
+                            </div>
+                            <div class="col-5">
+                                <%=appointment_date%>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                Time
+                            </div>
+                            <div class="col-5">
+                                <%=appointment_time%>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                Councelling fee
+                            </div>
+                            <div class="col-5">
+                                $100
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                Booking fee
+                            </div>
+                            <div class="col-5">
+                                $20
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row" style="color: #fd6342;">
+                            <div class="col-7">
+                                Total fee
+                            </div>
+                            <div class="col-5">
+                                $120
+                            </div>
                         </div>
                     </div>
                 </div>
-                <br />
-                <div class="row">
-                    <div class="col-7">
-                        Date
-                    </div>
-                    <div class="col-5">
-                        <%=appointment_date%>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-7">
-                        Time
-                    </div>
-                    <div class="col-5">
-                        <%=appointment_time%>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-7">
-                        Councelling fee
-                    </div>
-                    <div class="col-5">
-                        $100
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-7">
-                        Booking fee
-                    </div>
-                    <div class="col-5">
-                        $20
-                    </div>
-                </div>
-                <br />
-                <div class="row" style="color: #fd6342;">
-                    <div class="col-7">
-                        Total fee
-                    </div>
-                    <div class="col-5">
-                        $120
-                    </div>
-                </div>
-            </div>
-        </div>
-    <div class="col-7" style="margin-left: -10%;">
-        <div class="p-card bg-white p-2 rounded px-3 card_2">
-            <div class="row">
-                <div class="col-12">
-                    <h5>
-                        Personal information
-                    </h5>
-                </div>
-            </div>
-            <br>
-           
-                <div class="row">
-                    <input type="text" name="appointment_date" id="appointment_date" hidden value="<%=appointment_date%>">
-                    <input type="text" name="appointment_time" id="appointment_time" hidden value="<%=appointment_time%>">
-                    <input type="text" name="doctor_id" id="doctor_id" hidden value="<%=doctor_id%>">
-                    <div class="col-5">
-                     <input type="text" name="first_name" id="first_name" placeholder="First name" size="23vw">
-                    </div>
-                    <div class="col-5">
-                        <input type="text" name="last_name" id="last_name" placeholder="Last name" size="20vw">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-5">
-                     <input type="email" name="email" id="email" placeholder="Email" size="23vw">
-                    </div>
-                    <div class="col-5">
-                        <input type="text" name="phone" id="phone" placeholder="Phone" size="20vw">
-                    </div>
-                </div>
-                <br><br>
-                <div class="row">
-                    <div class="col-12">
-                        <h5>
-                            Payment method
-                        </h5>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-5">
-                     <input type="text" name="card_name" id="" placeholder="Name on card" size="23vw">
-                    </div>
-                    <div class="col-5">
-                        <input type="text" name="card_no" id="" placeholder="Card no" size="20vw">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-3">
-                     <input type="text" name="expiry_year" id="" placeholder="Expiry year" size="12vw">
-                    </div>
-                    <div class="col-3">
-                        <input type="text" name="expiry_month" id="" placeholder="Expiry month" size="12vw">
-                    </div>
-                    <div class="col-3">
-                        <input type="text" name="cvv" id="" placeholder="CVV" size="12vw">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-1">
-                     <input type="checkbox" name="agree" id="agree">
-                    </div>
-                    <div class="col-10">
-                        I have read and confirm <a href="">Term & conditions</a>
-                    </div>
-                </div>
+                <form action="/user/payment_process" method="post">
+                <div class="col-7" style="margin-left: -10%;">
+                    <div class="p-card bg-white p-2 rounded px-3 card_2">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>
+                                    Personal information
+                                </h5>
+                            </div>
+                        </div>
+                        <br />
 
-                <div class="row">
-                    <div class="col-12">
-                        <input type="submit" value="Confirm and pay" name="submit" class="btn" id="btn">
-                        <!-- <a href="" class="btn" id="btn">Confirm and pay </a> -->
+                        <div class="row">
+                            <input type="text" name="appointment_date" id="appointment_date" hidden value="<%=appointment_date%>" />
+                            <input type="text" name="appointment_time" id="appointment_time" hidden value="<%=appointment_time%>" />
+                            <input type="text" name="doctor_id" id="doctor_id" hidden value="<%=doctor_id%>" />
+                            <div class="col-5">
+                                <input type="text" name="first_name" id="first_name" placeholder="First name" size="23vw" />
+                            </div>
+                            <div class="col-5">
+                                <input type="text" name="last_name" id="last_name" placeholder="Last name" size="20vw" />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-5">
+                                <input type="email" name="email" id="email" placeholder="Email" size="23vw" />
+                            </div>
+                            <div class="col-5">
+                                <input type="text" name="phone" id="phone" placeholder="Phone" size="20vw" />
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>
+                                    Payment method
+                                </h5>
+                            </div>
+                        </div>
+                        <br />
+                        <!-- <div class="row">
+                            <div class="col-5">
+                                <input type="text" name="card_name" id="" placeholder="Name on card" size="23vw" />
+                            </div>
+                            <div class="col-5">
+                                <input type="text" name="card_no" id="" placeholder="Card no" size="20vw" />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-3">
+                                <input type="text" name="expiry_year" id="" placeholder="Expiry year" size="12vw" />
+                            </div>
+                            <div class="col-3">
+                                <input type="text" name="expiry_month" id="" placeholder="Expiry month" size="12vw" />
+                            </div>
+                            <div class="col-3">
+                                <input type="text" name="cvv" id="" placeholder="CVV" size="12vw" />
+                            </div>
+                        </div>
+ -->
+                        <br />
+                        <div class="row">
+                            <div class="col-1">
+                                <input type="checkbox" name="agree" id="agree" />
+                            </div>
+                            <div class="col-10">I have read and confirm <a href="">Term & conditions</a></div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- <input type="submit" value="Confirm and pay" name="submit" class="btn" id="btn" /> -->
+                                <script
+                                src="//checkout.stripe.com/v2/checkout.js"
+                                class="stripe-button"
+                                data-key="<%= key %>"
+                                data-amount="12000"
+                                data-currency="usd"
+                                data-name="<%=result[0].first_name%> <%=result[0].last_name%>"
+                                data-description="Buy React.js Complete Course"
+                                data-locale="auto"
+                                
+                            ></script>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-           
-        </div>
-    </div>
-       </div>
-    </form>
+            </form>
+            </div>
+        
+        
         <br />
         <br />
         <br />

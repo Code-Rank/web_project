@@ -37,10 +37,11 @@ const login= async(req,res)=>
 {
   let {email,password}=req.body;
   //res.send(req.body);
-   usersModel.find({email:email,password:password},"email user_type",(error,result)=>{
+   usersModel.find({email:email,password:password},"email user_type _id",(error,result)=>{
     if(result.length>0){
           req.session.email=email;
           req.session.user_type=result[0].user_type;
+          req.session.user_id=result[0]._id;
           /* console.log(result);
           console.log(req.session.email);
           console.log(req.session.user_type); */

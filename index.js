@@ -15,6 +15,7 @@ import ejs from "ejs";
 const app =express();
 const port=3001;
 
+
 //database connection
 const uri="mongodb://127.0.0.1:27017/MindFree_db";
 mongoose.set("strictQuery","false");
@@ -41,7 +42,8 @@ app.use(function(req, res, next) {
     //res.locals.user["user_type"] = req.session.user_type;
     res.locals.user ={
         email:req.session.email,
-        user_type:req.session.user_type
+        user_type:req.session.user_type,
+        user_id:req.session.id
     };
     next();
   });
