@@ -1,0 +1,361 @@
+body{
+    background: #F9F9F9;
+}
+nav .nav_item{
+    color:#FF6C59;
+    font-weight: 500;
+}
+.nav .nav_item .heart{
+    color:red;
+    font-size: 12px;
+}
+.btn_signup{
+    background: #FF6C59!important;
+    border-radius: 10px!important;
+}
+nav .btn_signup:hover{
+    background:white!important;
+    border:2px solid #FF6C59;
+    color:#FF6C59;
+}
+.header_part .row h1{
+    color:#222D39;
+    font-size: 50px;
+    padding-top: 150px;
+}
+.header_part .row button{
+    background:#FF6C59!important;
+    border:none;
+    border-radius: 10px!important;
+}
+.header_part .row button:hover{
+    background:white!important;
+    border:2px solid #FF6C59;
+    color:#FF6C59;
+}
+.Sada_part{
+    margin-top: 200px;
+}
+.Sada_part h1{
+    font-size: 130px;
+    color:#242424;
+}
+.Sada_part h3{
+    font-size: 65px;
+    color:#687394;
+}
+.Sada_part p{
+    font-size: 32px;
+}
+.Sada_part .english{
+    color:#FF6D5A!important;
+}
+.perspective_section img{
+    margin-left: -100px;
+    width:560px;
+}
+.perspective_section ul li i{
+    color:#FF6C59;
+}
+.security_section{
+    margin-top: 150px;
+}
+.security_header p{
+    font-size: 23px;
+}
+.security_body .box h2{
+    font-size: 22px;
+}
+.security_body .row .box:hover{
+    background:white;
+    border-top: 5px solid #FF6C59;
+    border-radius: 5px;
+    box-shadow: 0px 5px 14px #888888;
+}
+.ATM-card_header{
+    margin-top: 200px;
+}
+.ATM-card_body{
+    margin-top: -93px;
+    border-radius: 10px;
+    background: white;
+}
+.connecting_section{
+    margin-top: 550px;
+}
+.connecting_section .row h1{
+    font-size: 30px;
+}
+.connecting_section .shop_part img{
+    height: 80px;    
+}
+.connecting_section .shop_part p{
+    font-size:18px;
+}
+.connecting_section .real_part img{
+    height: 80px;  
+}
+.connecting_section .real_part p{
+    font-size:18px;
+}
+.connecting_section .lowest_part img{
+    height: 80px;  
+}
+.connecting_section .lowest_part p{
+    font-size:18px;
+}
+.control-money_section{
+    margin-top: 200px;
+}
+.control-money_section .money_images{
+    height: 100px;
+}
+.control-money_section .row h6{
+    font-size: 23px;
+}
+.control-money_section .row p{
+    font-size: 19px;
+    line-height: 30px;
+}
+.message_section{
+    margin-top: 300px;
+}
+.emoji{
+    height: 20px;
+}
+.transfer_section{
+    margin-top:200px;
+}
+.transfer_section .transfer_header .world_image{
+    height: 35px;
+}
+.transfer_section .transfer_header p{
+    font-size: 20px;
+}
+.Ready_section{
+    margin-top: 200px;
+}
+.Ready_section .row button{
+    background: #FF6C59;
+    color:white;
+    border-radius: 15px;
+}
+.Ready_section .row button:hover{
+    background:white!important;
+    border:2px solid #FF6C59;
+    border-radius: 15px;
+    color:#FF6C59;
+}
+.footer_part{
+    margin-top: 200px;
+    background: #061A28;
+}
+.footer_part .first_part{
+    font-size: 11px;
+}
+.facebook{
+    width: 43px;
+    height: 40px;
+    background: #183040;
+    border-radius: 5px;
+}
+.facebook i{
+    padding-top: 13px;
+} 
+.footer_part .row h2{
+    font-size: 23px;
+}
+
+
+
+/* This portion is the css of FAQ page  */
+
+.header_section{
+	background:url(../images/banner_bg-og.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-top: 250px;
+	padding-bottom: 250px;
+}
+.header_section h1{
+    font-size: 60px;
+}
+.features_part ul{
+    border-bottom: 1px solid #DFDFDF;
+    line-height: 8px;
+}
+.features_part ul li span{
+    font-size: 30px;
+}
+.question_section .row p{
+    font-size: 33px;
+}
+.question_section .row span{
+    color:#164A62;
+}
+.question_section .row input{
+    background: #FF6C59;
+    border-radius: 10px;
+    border:none;
+}
+.question_section .row input:hover{
+    background: white;
+    color:#FF6C59;
+    border-radius: 10px;
+    border:2px solid #FF6C59;
+}
+
+/* FAQ css end */
+
+
+
+
+/* From here the css of blog page start */
+.header_image{
+    background: url(../images/Group-Photo-Careers-Peach-oz61yslmf0864duyo2it7kfmpgkkwulbj55ae1teka.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+.about_work h1{
+    font-size: 80px;
+    color:#2C2C51;
+}
+.about_work .about-work_header p{
+    font-size: 33px;
+}
+.about_work .about-work_body .row h2{
+    font-size: 20px;
+}
+.about-work_body .row .parts p{
+    line-height: 30px;
+}
+.about_work .about-work_body .row .parts:hover{
+    background:white;
+    border-top: 5px solid #FF6C59;
+    border-radius: 5px;
+    box-shadow: 0px 5px 14px #888888;
+}
+.carousel_parts{
+    margin-top: 100px;
+}
+.carousel-item p{
+    font-size: 24px;
+}
+.carousel-item small{
+    font-size: 17px;
+}
+.stellar-body{
+    margin-top: 100px;
+}
+.stellar-perks_section .stellar-body .stellar_images{
+    background: #FF6C59;
+    border-radius: 17px;
+}
+.stellar-perks_section .stellar-body .row p{
+    font-size: 20px;
+}
+.stellar-perks_section .stellar-body .row .parts:hover{
+    background:white;
+    border-top: 5px solid #FF6C59;
+    border-radius: 5px;
+    box-shadow: 0px 5px 14px #888888;
+}
+.join_body .form-group select:hover{
+    border:1px solid blue;
+}
+.join-us_section .join_body .link{
+    color:#FF6C59;
+}
+.Curious_section{
+    background: #FAFAFD;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.Curious_section .row h3{
+    color:#FF6C59;
+    font-size: 27px;
+}
+.Curious_section .row p{
+    font-size: 27px;
+}
+.Curious_section .row button{
+    background: #FF6D5A;
+    color:white;
+    border-radius: 10px;
+    border:none;
+}
+
+/* blog page end */
+
+
+
+
+/* The css of Contact page start from here */
+.carousel-inner span{
+    color:#FF6C59;
+}
+.carousel-inner i{
+    font-size: 15px;
+}
+.carousel-inner h2{
+    font-size: 25px;
+    /* margin-left: 100px; */
+}
+.carousel-inner .carousel-item input{
+    border: none;
+    border-bottom: 1px solid #FF6C59!important;
+    width: 70%;
+    height: 50px;
+    font-size: 30px;
+    color: #FF6C59;
+}
+.carousel-inner .carousel-item button{
+    background: #FF6C59;
+    border:none;
+    color:dark;
+}
+.carousel-inner .carousel-item{
+    margin-top: 120px;
+    margin-bottom: 180px;
+}
+.carousel_icons{
+    right: 0px;
+    bottom: 0px;
+}
+/* Contact page end */
+
+
+
+/* The css of Hiring page start */
+.blog-header_image{
+    background: url(../images/banner_bg-og\ \(1\).png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    padding-top: 200px;
+    padding-bottom: 180px;
+}
+
+.save-investkment_section .row .h2{
+    text-decoration: none;
+    font-size: 26px;
+}
+.save-investkment_section .row .readMore{
+    font-size: 13px;
+    text-decoration: none;
+}
+.save-investkment_section .row a:hover{
+    color: aqua !important;
+}
+.save-investkment_section .row input{
+    width: 100%;
+    height: 50px;
+}
+
+.save-investkment_section .row .d-flex h3{
+    font-size: 19px;
+    line-height: 18px;
+}
+/* end here */
+

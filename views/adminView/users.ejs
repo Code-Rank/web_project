@@ -1,189 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-       
+  <head>
+    <meta name="viewpoint" content="width=device-width, initial-value=1.0" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link
+      rel="shortcut-icon"
+      width="16px"
+      height="16px"
+      href="assets/images/sadapay-logo.webp"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <title>sadapay</title>
+  </head>
 
-        <%- include("../partial/head.ejs") %>
-        <title>Document</title>
-    </head>
-    <style>
-        body {
-            padding: 0%;
-            margin: 0%;
-        }
-        #top_menu li a {
-            color: white;
-        }
-        .margin_item {
-            margin-left: 60%;
-        }
-        .margin_item li {
-            margin-left: 10px;
-        }
-        .orange_text_color {
-            color: #fd6342;
-        }
-        .gray_text_color {
-            color: #252b3b;
-        }
-        .orange_text_color {
-            color: #fd6342;
-        }
-        .gray_background_color {
-            background: #252b3b;
-        }
-        .orange_background_color {
-            background: #fd6342;
-        }
+  <div>
+    <!--Navbar-->
+    <%- include('../partial/navbar.ejs') %>
 
-        .sign_up {
-            padding-left: 3vw;
-            padding-right: 3vw;
-            padding-top: 0.6vw;
-            padding-bottom: 0.6vw;
+    <!--Admin-->
 
-            background: #fd6342;
-            border-color: #fd6342;
+    <div class="container mt-5 pt-5">
+      <div class="row">
+      <%- include('../partial/sidebar.ejs') %>
 
-            border-radius: 2px;
-            font-weight: bold;
-        }
+      <!--Appointment and bills-->
+      <div class="col-8">
+        <!--Cards-->
+        <table class="table mt-5">
+          <thead class="bg-danger text-white">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Role</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%var i=1%> <% data.forEach((item)=> { %>
+            <tr>
+              <th scope="row"><%= i++ %></th>
+              <td><%= item.name %></td>
+              <td><%= item.email %></td>
+              <td><%= item.specialist %></td>
+              <td>Active</td>
+            </tr>
+            <%}) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+	</div>
 
-        #top_menu li a:hover {
-            color: #fd6342;
-        }
-        #calendar {
-            width: 90%;
-            margin-left: 5%;
-        }
-        #booking {
-            padding-left: 3vw;
-            padding-right: 3vw;
-            padding-top: 0.6vw;
-            padding-bottom: 0.6vw;
-            background: #fd6342;
-            color: white;
-            margin: 3px;
-        }
-        #view_profile {
-            padding-left: 2vw;
-            padding-right: 2vw;
-            padding-top: 0.6vw;
-            padding-bottom: 0.6vw;
-            border: 1px solid #fd6342;
-        }
-        #view_profile:hover {
-            padding-left: 2vw;
-            padding-right: 2vw;
-            padding-top: 0.6vw;
-            padding-bottom: 0.6vw;
-            border: 1px solid #fd6342;
-            background: #fd6342;
-            color: white;
-        }
-        .cards {
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        }
-        #btn {
-            padding-left: 2vw;
-            padding-right: 2vw;
-            padding-top: 0.6vw;
-            padding-bottom: 0.6vw;
-            border: 1px solid #fd6342;
-            background: #fd6342;
-            color: white;
-        }
-        a:hover{
-          text-decoration: none;
-        }
-    </style>
-
-    <body>
-        <%- include("../partial/top_menu.ejs")%>
-        <br />
-        <br />
-        <br />
-
-        <div class="container mt-5 pt-5">
-            <div class="row">
-              <div class="col">
-                <div class="card" style="width: 19rem;">
-                    <div class="mt-5 ms-3">
-                        <img src="/img/profile.png" class="float-left" width="100" alt="..." />
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Muhammad Umar</h5>
-                        <p class="card-text">/ Amin</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <a href="#" class="list-group-item  "><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Request</a>
-                        <a href="/AddDoc.html" class="list-group-item"><i class="fa fa-user-plus" aria-hidden="true"></i>
-                          Add Doctor</a>
-                        <a class="list-group-item"  style="background:  #fd6342;"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;User</a>
-                        <a class="list-group-item"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Total Appointment</a>
-                    </ul>
-                </div>
-            </div>
-                <div class="col-8">
-                    <table class="table">
-                        <thead class=" text-white"  style="background:  #fd6342;">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Role</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>M.Ali</td>
-                                <td>ali12@gmail.cpom</td>
-                                <td>Patient</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Dr Huzaifa</td>
-                                <td>huzaifa@gmail.cpom</td>
-                                <td>Psychatrist</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Haris</td>
-                                <td>haris343@gmail.cpom</td>
-                                <td>Patient</td>
-                                <td>deactive</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Roman Sheraz</td>
-                                <td>roman2342@gmail.cpom</td>
-                                <td>psychologist</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td>Nazish</td>
-                                <td>n234324@gmail.cpom</td>
-                                <td>Patient</td>
-                                <td>Active</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <br><br><br>
-        <div class="gray_background_color">
-            <%- include("../partial/footer.ejs")%>
-           
-        </div>
-    </body>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
 </html>
