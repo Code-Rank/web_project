@@ -1,17 +1,25 @@
 import express from "express";
-const router=express.Router();
+import {
+  addDoctor,
+  getDoctors,
+} from "../../controllers/adminController/adminControllers.js";
+import doctorModel from "../../models/doctorModel/doctorModel.js";
+const router = express.Router();
 
-router.get("/dashboard",(req,res)=>{
-    res.render("adminView/Dashbord.ejs");
+router.get("/dashboard", (req, res) => {
+  res.render("adminView/Dashbord.ejs");
 });
-router.get("/add_doctor",(req,res)=>{
-    res.render("adminView/adddoctor.ejs");
+router.get("/add_doctor", (req, res) => {
+  res.render("adminView/adddoctor.ejs");
 });
-router.get("/totol_appointment",(req,res)=>{
-    res.render("adminView/totalAppointment.ejs");
+router.get("/totol_appointment", async (req, res) => {
+  const totalDoctors = await doctorModel.find().countDocuments();
+  res.render("adminView/totalAppointment.ejs", { totalDoctors: totalDoctors });
 });
-router.get("/user",(req,res)=>{
-    res.render("adminView/users.ejs");
+router.get("/user", async (req, res) => {
+  const result = await getDoctors();
+  res.render("adminView/users.ejs", { data: result });
 });
+router.post("/doctor/add-doctor", addDoctor);
 
 export default router;

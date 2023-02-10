@@ -1,193 +1,210 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-       
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <%- include("../partial/head.ejs") %>
-        <title>Document</title>
-    </head>
-    <style>
-        body {
-            padding: 0%;
-            margin: 0%;
-        }
-        #top_menu li a {
-            color: white;
-        }
-        .margin_item {
-            margin-left: 60%;
-        }
-        .margin_item li {
-            margin-left: 10px;
-        }
-        .orange_text_color {
-            color: #fd6342;
-        }
-        .gray_text_color {
-            color: #252b3b;
-        }
-        .orange_text_color {
-            color: #fd6342;
-        }
-        .gray_background_color {
-            background: #252b3b;
-        }
-        .orange_background_color {
-            background: #fd6342;
-        }
+    <%- include("../partial/head.ejs") %>
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      padding: 0%;
+      margin: 0%;
+    }
+    #top_menu li a {
+      color: white;
+    }
+    .margin_item {
+      margin-left: 60%;
+    }
+    .margin_item li {
+      margin-left: 10px;
+    }
+    .orange_text_color {
+      color: #fd6342;
+    }
+    .gray_text_color {
+      color: #252b3b;
+    }
+    .orange_text_color {
+      color: #fd6342;
+    }
+    .gray_background_color {
+      background: #252b3b;
+    }
+    .orange_background_color {
+      background: #fd6342;
+    }
 
-        .sign_up {
-            padding-left: 3vw;
-            padding-right: 3vw;
-            padding-top: 0.6vw;
-            padding-bottom: 0.6vw;
+    .sign_up {
+      padding-left: 3vw;
+      padding-right: 3vw;
+      padding-top: 0.6vw;
+      padding-bottom: 0.6vw;
 
-            background: #fd6342;
-            border-color: #fd6342;
+      background: #fd6342;
+      border-color: #fd6342;
 
-            border-radius: 2px;
-            font-weight: bold;
-        }
+      border-radius: 2px;
+      font-weight: bold;
+    }
 
-        #top_menu li a:hover {
-            color: #fd6342;
-        }
-        #calendar {
-            width: 90%;
-            margin-left: 5%;
-        }
-        #booking {
-            padding-left: 3vw;
-            padding-right: 3vw;
-            padding-top: 0.6vw;
-            padding-bottom: 0.6vw;
-            background: #fd6342;
-            color: white;
-            margin: 3px;
-        }
-        #view_profile {
-            padding-left: 2vw;
-            padding-right: 2vw;
-            padding-top: 0.6vw;
-            padding-bottom: 0.6vw;
-            border: 1px solid #fd6342;
-        }
-        #view_profile:hover {
-            padding-left: 2vw;
-            padding-right: 2vw;
-            padding-top: 0.6vw;
-            padding-bottom: 0.6vw;
-            border: 1px solid #fd6342;
-            background: #fd6342;
-            color: white;
-        }
-        .cards {
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        }
-        #btn {
-            padding-left: 2vw;
-            padding-right: 2vw;
-            padding-top: 0.6vw;
-            padding-bottom: 0.6vw;
-            border: 1px solid #fd6342;
-            background: #fd6342;
-            color: white;
-        }
-        a:hover{
-          text-decoration: none;
-        }
-    </style>
+    #top_menu li a:hover {
+      color: #fd6342;
+    }
+    #calendar {
+      width: 90%;
+      margin-left: 5%;
+    }
+    #booking {
+      padding-left: 3vw;
+      padding-right: 3vw;
+      padding-top: 0.6vw;
+      padding-bottom: 0.6vw;
+      background: #fd6342;
+      color: white;
+      margin: 3px;
+    }
+    #view_profile {
+      padding-left: 2vw;
+      padding-right: 2vw;
+      padding-top: 0.6vw;
+      padding-bottom: 0.6vw;
+      border: 1px solid #fd6342;
+    }
+    #view_profile:hover {
+      padding-left: 2vw;
+      padding-right: 2vw;
+      padding-top: 0.6vw;
+      padding-bottom: 0.6vw;
+      border: 1px solid #fd6342;
+      background: #fd6342;
+      color: white;
+    }
+    .cards {
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    #btn {
+      padding-left: 2vw;
+      padding-right: 2vw;
+      padding-top: 0.6vw;
+      padding-bottom: 0.6vw;
+      border: 1px solid #fd6342;
+      background: #fd6342;
+      color: white;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
 
-    <body>
-        <%- include("../partial/top_menu.ejs")%>
-        <br />
-        <br />
-        <br />
-    
+  <body>
+    <%- include("../partial/top_menu.ejs")%>
+    <br />
+    <br />
+    <br />
 
-        <div class="container mt-5 pt-5">
-          <div class="row">
-            <div class="col">
-              <div class="card" style="width: 19rem;">
-                  <div class="mt-5 ms-3">
-                      <img src="/img/profile.png" class="float-left" width="100" alt="..." />
-                  </div>
-                  <div class="card-body">
-                      <h5 class="card-title">Muhammad Umar</h5>
-                      <p class="card-text">/ Amin</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                      <a href="#" class="list-group-item active " style="background:  #fd6342;"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Request</a>
-                      <a href="/AddDoc.html" class="list-group-item"><i class="fa fa-user-plus" aria-hidden="true"></i>
-                        Add Doctor</a>
-                      <a class="list-group-item"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;User</a>
-                      <a class="list-group-item"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Total Appointment</a>
-                  </ul>
-              </div>
+    <div class="container mt-5 pt-5">
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 19rem">
+            <div class="mt-5 ms-3">
+              <img
+                src="/img/profile.png"
+                class="float-left"
+                width="100"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Muhammad Umar</h5>
+              <p class="card-text">/ Amin</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <a href="dashboard" class="list-group-item"
+                ><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Request</a
+              >
+              <a
+                href="add_doctor"
+                class="list-group-item"
+                style="background: #fd6342"
+                ><i class="fa fa-user-plus" aria-hidden="true"></i> Add
+                Doctor</a
+              >
+              <a href="user" class="list-group-item"
+                ><i class="fa fa-list" aria-hidden="true"></i>&nbsp;User</a
+              >
+              <a href="totol_appointment" class="list-group-item"
+                ><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Total
+                Appointment</a
+              >
+            </ul>
           </div>
-              <!--Form-->
-              <div class="col-8">
-                  <div class="card">
-                      <div class="card-header  text-white"  style="background:  #fd6342;">
-                          Add Doctor
-                      </div>
-                      <div class="card-body">
-                          <form>
-                              <div class="form-row">
-                                  <div class="form-group col-md-6">
-                                      <label for="inputEmail4">Email</label>
-                                      <input type="email" class="form-control bg-light" id="inputEmail4" placeholder="Email" />
-                                  </div>
-                                  <div class="form-group col-md-6">
-                                      <label for="inputPassword4">Password</label>
-                                      <input type="password" class="form-control bg-light" id="inputPassword4" placeholder="Password" />
-                                  </div>
-                                  <div class="form-group col-md-6">
-                                      <label for="inputPassword4">Confirm Password</label>
-                                      <input type="password" class="form-control bg-light" id="inputPassword4" placeholder="Confirm Password" />
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label for="inputAddress">Address</label>
-                                  <input type="text" class="form-control bg-light" id="inputAddress" placeholder="1234 Main St" />
-                              </div>
-                              <div class="form-group">
-                                  <label for="inputPhone">Phone Number</label>
-                                  <input type="text" class="form-control bg-light" id="inputPhone" placeholder="1234 Main St" />
-                              </div>
-                              <div class="form-group">
-                                  <label for="inputAddress2">Hospital</label>
-                                  <input type="text" class="form-control bg-light" id="inputAddress2" placeholder="Hospital,Clinic" />
-                              </div>
-                              <div class="form-row">
-                                  <div class="form-group col-md-6">
-                                      <label for="inputSpecialist">Specialist In</label>
-                                      <input type="text" class="form-control bg-light" id="inputSpecialist" />
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label for="exampleFormControlFile1">Add Photo</label><br />
-                                  <input type="file" class="form-control-file mt-2" id="exampleFormControlFile1" />
-                              </div>
-
-                              <div class="form-group"></div>
-                              <button type="submit" class="btn btn-primary">Submit</button>
-                          </form>
-                      </div>
-                  </div>
-              </div>
+        </div>
+        <!--Form-->
+        <div class="col-8">
+          <div class="card">
+            <div class="card-header text-white" style="background: #fd6342">
+              Add Doctor
+            </div>
+            <div class="card-body">
+            <form method="post" action="/admin/doctor/add-doctor">
+                        
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <label for="inputName">Name</label>
+                    <input type="name" class="form-control bg-light" name="name" id="inputName" placeholder="Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control bg-light" name="email" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputPassword4">Password</label>
+                    <input type="password" class="form-control bg-light" name="password" id="inputPassword4" placeholder="Password">
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputPassword4">Confirm Password</label>
+                    <input type="confirmpassword" class="form-control bg-light" name="confirmpassword" id="inputPassword4" placeholder="Confirm Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control bg-light" id="inputAddress" name="address" placeholder="1234 Main St">
+                </div>
+                <div class="form-group">
+                    <label for="inputPhone">Phone Number</label>
+                    <input type="text" class="form-control bg-light" id="inputPhone" name="phonenumber" placeholder="1234 Main St">
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Hospital</label>
+                    <input type="text" class="form-control bg-light" id="inputAddress2" name="hospital" placeholder="Hospital,Clinic">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <label for="inputSpecialist">Specialist In</label>
+                    <input type="text" class="form-control bg-light" id="inputSpecialist" name="specialist">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Add Photo</label><br>
+                        <input type="file" class="form-control-file mt-2" id="imgInp">
+                        <img id="blah" src="#" class="img img-thumbnail" width="100px" name="image" />
+                    </div>
+                </div>
+                <div class="form-group">
+                </div>
+                <button type="submit" class="btn btn-primary mb-5">Submit</button>
+                </form>
+            </div>
           </div>
+        </div>
       </div>
-        <div class="gray_background_color">
-          <%- include("../partial/footer.ejs")%>
-       
-      </div>
-    </body>
+    </div>
+    <div class="gray_background_color">
+      <%- include("../partial/footer.ejs")%>
+    </div>
+  </body>
 </html>
-
