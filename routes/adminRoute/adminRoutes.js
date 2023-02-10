@@ -1,18 +1,17 @@
-import express from "express"
-import {
-  createDoctor,
-  addDoctor,
-} from "../../controllers/adminController/addController.js"
-import { dashbordController } from "../../controllers/adminController/dashbordContrller.js"
-import { totalappController } from "../../controllers/adminController/totalappController.js"
-import { userController } from "../../controllers/adminController/userController.js"
+import express from "express";
+const router=express.Router();
 
-const router = express.Router()
+router.get("/dashboard",(req,res)=>{
+    res.render("adminView/Dashbord.ejs");
+});
+router.get("/add_doctor",(req,res)=>{
+    res.render("adminView/adddoctor.ejs");
+});
+router.get("/totol_appointment",(req,res)=>{
+    res.render("adminView/totalAppointment.ejs");
+});
+router.get("/user",(req,res)=>{
+    res.render("adminView/users.ejs");
+});
 
-router.get("/", dashbordController)
-router.get("/doctor/add-doctor", createDoctor)
-router.post("/doctor/add-doctor", addDoctor)
-router.get("/user", userController)
-router.get("/totalAppointment", totalappController)
-
-export default router
+export default router;

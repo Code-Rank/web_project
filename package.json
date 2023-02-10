@@ -1,7 +1,6 @@
 {
   "name": "project_web",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -15,6 +14,17 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "mongoose": "^6.8.2",
-    "nodemon": "^2.0.20"
-  }
+    "nodemon": "^2.0.20",
+    "stripe": "^11.9.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code-Rank/web_project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Code-Rank/web_project/issues"
+  },
+  "homepage": "https://github.com/Code-Rank/web_project#readme",
+  "description": ""
 }
