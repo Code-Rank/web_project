@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6/index.global.min.js"></script>
+
+        <%- include("../partial/head.ejs") %>
+        <title>Document</title>
+    </head>
+    <style>
+        body {
+            padding: 0%;
+            margin: 0%;
+        }
+        #top_menu li a {
+            color: white;
+        }
+        .margin_item {
+            margin-left: 60%;
+        }
+        .margin_item li {
+            margin-left: 10px;
+        }
+        .orange_text_color {
+            color: #fd6342;
+        }
+        .gray_text_color {
+            color: #252b3b;
+        }
+        .orange_text_color {
+            color: #fd6342;
+        }
+        .gray_background_color {
+            background: #252b3b;
+        }
+        .orange_background_color {
+            background: #fd6342;
+        }
+
+        .sign_up {
+            padding-left: 3vw;
+            padding-right: 3vw;
+            padding-top: 0.6vw;
+            padding-bottom: 0.6vw;
+
+            background: #fd6342;
+            border-color: #fd6342;
+
+            border-radius: 2px;
+            font-weight: bold;
+        }
+
+        #top_menu li a:hover {
+            color: #fd6342;
+        }
+        #calendar {
+            width: 90%;
+            margin-left: 5%;
+        }
+        #btn {
+            padding-left: 2vw;
+            padding-right: 2vw;
+            padding-top: 0.6vw;
+            padding-bottom: 0.6vw;
+            background: #fd6342;
+            color: white;
+            margin-left: 30%;
+            margin-top: 7%;
+        }
+        .card_1 {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 50%;
+            margin-left: 5%;
+        }
+        .card_2 {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 100%;
+            margin-left: 5%;
+        }
+        input {
+            outline-color: #fd6342;
+        }
+    </style>
+
+    <body>
+        <%- include("../partial/top_menu.ejs")%>
+        <br />
+        <br />
+        <br />
+        <form action="/user/update_setting" method="post" enctype="multipart/form-data" >
+            <div class="row">
+                
+                <form action="/user/profile_update" method="post">
+                <div class="col-7" style="margin-left: 15%;">
+                    <div class="p-card bg-white p-2 rounded px-3 card_2">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>
+                                    
+                                    Personal information
+                                </h5>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" name="first_name" id="first_name" placeholder="First name" size="30vw" value="<%=get_user.first_name%>" required/>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" name="last_name" id="last_name" placeholder="Last name" size="30vw" value="<%=get_user.last_name%>" required/>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="email" name="email" id="email" placeholder="Email" size="30vw" value="<%=get_user.email%>" required/>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" name="phone" id="phone" placeholder="Phone no" size="30vw" value="<%=get_user.phone%>" required/>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="date" name="dob" id="dob" placeholder="Date of birth" style="width:17vw;" value="<%=get_user.dob%>" required/>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" name="city" id="city" placeholder="City" size="30vw" value="<%=get_user.city%>" required/>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" name="state" id="state" placeholder="State" size="30vw" value="<%=get_user.state%>" required/>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" name="country" id="country" placeholder="Country" size="30vw" value="<%=get_user.country%>" required/>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" name="councelling_fee" id="councelling_fee" placeholder="Councelling fee " size="30vw" value="<%=get_user.councelling_fee%>" required/>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" name="booking_fee" id="booking_fee" placeholder="Booking feee" size="30vw" value="<%=get_user.booking_fee%>" required/>
+                            </div>
+                           
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="text" name="address" id="address" placeholder="Home address" size="90vw" value="<%=get_user.address%>" required/>
+                            </div>
+                           
+                        </div>
+                        <br>
+                        
+                        
+                        <div class="row">
+                            <div class="col-6">
+                                
+                               <input type="file"  name="image" id="image" placeholder="Uplode your image here" size="90vw" required />
+                            </div>
+                           
+                        </div>
+
+                        
+                        <br />
+                        <br />
+                       
+                        
+                        
+                        <div class="row">
+                            <div class="col-12">
+                            <input type="submit" value="Save changes" name="submit" class="btn" id="btn" />
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        
+        
+        <br />
+        <br />
+        <br />
+
+        <div class="gray_background_color">
+            <%- include("../partial/footer.ejs")%>
+        </div>
+    </body>
+</html>

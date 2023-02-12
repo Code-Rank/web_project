@@ -12,6 +12,7 @@ import session from "express-session";
 import path from "path";
 import ejs from "ejs";
 
+
 const app =express();
 const port=3001;
 
@@ -24,7 +25,8 @@ connection(uri);
 app.use(session({
     secret:"12345",
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
+    cookie: { maxAge: (60000*60) }
 }));
 app.use(flash());
 
@@ -43,7 +45,9 @@ app.use(function(req, res, next) {
     res.locals.user ={
         email:req.session.email,
         user_type:req.session.user_type,
-        user_id:req.session.id
+        user_id:req.session.id,
+        new_image:req.session.new_image,
+        old_image:req.session.old_image
     };
     next();
   });

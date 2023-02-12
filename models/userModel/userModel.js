@@ -5,6 +5,15 @@ const users=mongoose.Schema({
       last_name:{type:String},
       user_type:{type:String},
       email:{type:String},
+      phone:{type:String},
+      state:{type:String},
+      city:{type:String},
+      country:{type:String},
+      address:{type:String},
+      dob:{type:String},
+      image:{type:String},
+      councelling_fee:{type:String},
+      booking_fee:{type:String},
       password:{type:String},
 
 });

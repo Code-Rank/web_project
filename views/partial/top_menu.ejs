@@ -15,7 +15,7 @@
     </button>
     <style>
         .dropdown{
-            margin-left: 75%;
+            margin-left: 70%;
         }
     </style>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -23,7 +23,7 @@
         <ul class="navbar-nav mr-auto margin_item" id="top_menu">
            
             <li class="nav-item">
-                <a class="nav-link" href="#">Appointments </a>
+                <a class="nav-link" href="/user/user_appointment">Appointments </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/user/doctors">Doctors</a>
@@ -34,12 +34,22 @@
             
             <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
-                </button>
+                    
+                    <%if(user.old_image!=""){%>
+                        <img src="/uploads/<%=user.old_image%>" wsidth="40" height="40" class="rounded-circle"> 
+                
+                    <%}else if(user.new_image!=""){%>
+                        <img src="/uploads/<%=user.new_image%>" wsidth="40" height="40" class="rounded-circle"> 
+                    <%}else{%>
+                        <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" wsidth="40" height="40" class="rounded-circle"> 
+                    <%}%>
+                   
+                  
+   </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
-                  <a class="dropdown-item" href="#">Log out</a>
+                  <a class="dropdown-item" href="/user/settings">Settings</a>
+                  <a class="dropdown-item" href="/auth/logout">Log out</a>
                 </div>
               </div>
             
@@ -85,7 +95,7 @@
                 </li>
                 &nbsp; &nbsp; &nbsp;
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sign in</a>
+                    <a class="nav-link" href="">Sign in</a>
                 </li>
              
                 

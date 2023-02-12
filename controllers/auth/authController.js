@@ -37,11 +37,14 @@ const login= async(req,res)=>
 {
   let {email,password}=req.body;
   //res.send(req.body);
-   usersModel.find({email:email,password:password},"email user_type _id",(error,result)=>{
+   usersModel.find({email:email,password:password},(error,result)=>{
     if(result.length>0){
+          console.log(result[0]);
           req.session.email=email;
           req.session.user_type=result[0].user_type;
           req.session.user_id=result[0]._id;
+          req.session.old_image=result[0].image;
+          //console.log(req.session.image);
           /* console.log(result);
           console.log(req.session.email);
           console.log(req.session.user_type); */
@@ -59,6 +62,10 @@ const login= async(req,res)=>
     
 
 }
+const logout=(req,res)=>{
+    req.session.destroy((err) => {
+        res.redirect('/login') // will always fire after session is destroyed
+    });
+}
 
-
-export {signup,login }
+export {signup,login ,logout}
