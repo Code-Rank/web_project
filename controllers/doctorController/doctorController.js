@@ -58,4 +58,40 @@ const settings_view=async (req,res)=>{
       res.render("doctorView/settings.ejs",{get_user:get_user});
 }
 
-export {dashboard_view,appointment_view,update_status,settings_view}
+const update_setting=async (req,res)=>{
+    
+    console.log(req.body.image);
+    console.log(req.body);
+    
+    let {first_name,last_name,email,phone,city,state,country,address,dob,councelling_fee,booking_fee,detail_desc,short_desc}=req.body;
+    try {
+
+        
+         
+         let update_record=await usersModel.updateOne({_id:req.session.user_id},{$set:{
+            first_name:first_name,
+            last_name:last_name,
+            
+            email:email,
+            phone:phone,
+            state:state,
+            city:city,
+            country:country,
+            address:address,
+            dob:dob,
+            councelling_fee:councelling_fee,
+            booking_fee:booking_fee,
+            councelling_fee:councelling_fee,
+            booking_fee:booking_fee,
+            detail_desc:detail_desc,
+            short_desc:short_desc,
+            image:req.file.filename,    
+        }}); 
+        req.session.new_image=req.file.filename;
+        res.redirect("/doctor/settings");
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export {dashboard_view,appointment_view,update_status,settings_view,update_setting}

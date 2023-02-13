@@ -180,12 +180,12 @@ section .section-title {
                 <div class="col-7">
                     
                     <h3 style="color: #fd6342;"><%=result[0].first_name%> <%=result[0].last_name%></h3>
-                    <p style="text-align: justify;">
-                        Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviewsIncrease confidence with
-                        trustpilot reviews
-                    </p>
+                    
+                        <%- result[0].short_desc%>
+                        
+                    
 
-                    <p>Address:lahore</p>
+                    <p>Address:<%=result[0].city%>,<%=result[0].country%></p>
                     <p>Email:<%=result[0].email%></p>
                 </div>
             </div>
@@ -211,11 +211,11 @@ section .section-title {
                         </nav>
                         <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <%- result[0].detail_desc%>                 
+                                       </div>
+                            <!-- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                 Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
-                            </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
-                            </div>
+                            </div> -->
                             
                         </div>
                     

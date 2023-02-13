@@ -59,7 +59,7 @@ const doctor_profile= (req,res)=>{
 
     let id=req.query.id;
     console.log(req.query.id);
-      usersModel.find({_id:id},"first_name last_name email",(error,result)=>{
+      usersModel.find({_id:id},(error,result)=>{
 
         if(result){
             console.log(result);
@@ -82,12 +82,13 @@ const create_appointment_view=(req,res)=>{
 
     })
 }
-const payment_view=(req,res)=>{
+const payment_view=async (req,res)=>{
      
       let {appointment_date,appointment_time,doctor_id}=req.query;
       console.log(appointment_date);
       console.log(req.session.user_id);
      if(req.session.user_id){
+    let doctor_data=await usersModel.find({_id:doctor_id});
       usersModel.find({_id:req.session.user_id},(error,result)=>{
         if(result){
             console.log(result);
@@ -97,6 +98,7 @@ const payment_view=(req,res)=>{
                 doctor_id:doctor_id,
                 key:Publishable_Key,
                 result:result,
+                doctor_data:doctor_data,
                 total:result[0].booking_fee+result[0].councelling_fee,
               });
         }
@@ -109,23 +111,23 @@ const payment_view=(req,res)=>{
 }
 
 const payment_process=(req,res)=>{
-const {appointment_date,appointment_time,doctor_id,first_name,last_name,email,phone,amount}=req.body;
+const {appointment_date,appointment_time,doctor_id,first_name,last_name,email,phone,amount,total_amount}=req.body;
     stripe.customers.create({
     email: req.body.stripeEmail,
     source: req.body.stripeToken,
-    name: 'Gautam Sharma',
+    name: `${first_name} ${last_name}`,
     address: {
     line1: 'TC 9/4 Old MES colony',
     postal_code: '110092',
-    city: 'New Delhi',
-    state: 'Delhi',
-    country: 'India',
+    city: 'Lahore',
+    state: 'Punjab',
+    country: 'Pakistan',
     }
     })
     .then((customer) => {
      
     return stripe.charges.create({
-    amount: 7000, // Charing Rs 25
+    amount: total_amount, // Charing Rs 25
     description: 'Web Development Product',
     currency: 'USD',
     customer: customer.id
@@ -144,7 +146,7 @@ const {appointment_date,appointment_time,doctor_id,first_name,last_name,email,ph
     const payment=new paymentModel({
         payment_to:req.session.user_id,
         payment_from:doctor_id,
-        amount:"678",
+        amount:total_amount,
         timeStamp:Date.now(),
        
     });

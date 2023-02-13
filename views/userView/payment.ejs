@@ -98,6 +98,7 @@
                                 <h5>
                                     Payemnt summary
                                 </h5>
+                                <hr>
                             </div>
                         </div>
                         <div class="row">
@@ -137,7 +138,7 @@
                                 Councelling fee
                             </div>
                             <div class="col-5">
-                                $<%=result[0].councelling_fee%>
+                                $<%=doctor_data[0].councelling_fee%>
                             </div>
                         </div>
                         <div class="row">
@@ -145,16 +146,17 @@
                                 Booking fee
                             </div>
                             <div class="col-5">
-                                $<%=result[0].booking_fee%>
+                                $<%=doctor_data[0].booking_fee%>
                             </div>
                         </div>
                         <br />
+                        <hr>
                         <div class="row" style="color: #fd6342;">
                             <div class="col-7">
                                 Total fee
                             </div>
                             <div class="col-5">
-                                $<%=Number(result[0].councelling_fee)+Number(result[0].booking_fee)%>
+                                $<%=Number(doctor_data[0].councelling_fee)+Number(doctor_data[0].booking_fee)%>
                             </div>
                         </div>
                     </div>
@@ -176,6 +178,7 @@
                             <input type="text" name="appointment_date" id="appointment_date" hidden value="<%=appointment_date%>" />
                             <input type="text" name="appointment_time" id="appointment_time" hidden value="<%=appointment_time%>" />
                             <input type="text" name="doctor_id" id="doctor_id" hidden value="<%=doctor_id%>" />
+                            <input type="text" name="total_amount" id="total_amount" hidden value="<%=Number(doctor_data[0].councelling_fee)+Number(doctor_data[0].booking_fee)%>">
                             <div class="col-5">
                                 <input type="text" name="first_name" id="first_name" placeholder="First name" size="23vw" value="<%=result[0].first_name%>" readonly/>
                             </div>
@@ -239,7 +242,7 @@
                                 src="//checkout.stripe.com/v2/checkout.js"
                                 class="stripe-button"
                                 data-key="<%= key %>"
-                                data-amount=<%=Number(result[0].councelling_fee)+Number(result[0].booking_fee)+"00"%>
+                                data-amount=<%=Number(doctor_data[0].councelling_fee)+Number(doctor_data[0].booking_fee)+"00"%>
                                 data-currency="usd"
                                 data-name="<%=result[0].first_name%> <%=result[0].last_name%>"
                                 data-description="Book appointment"
