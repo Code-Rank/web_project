@@ -15,6 +15,8 @@ const users=mongoose.Schema({
       councelling_fee:{type:String},
       booking_fee:{type:String},
       status:{type:String},
+      detail_desc:{type:String},
+      short_desc:{type:String},
       password:{type:String},
 
 });

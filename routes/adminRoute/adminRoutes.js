@@ -10,12 +10,12 @@ router.use((req,res,next)=>{
     next();
   }
 })
-router.get("/dashboard", (req, res) => {
-  res.render("adminView/Dashbord.ejs");
+/* router.get("/dashboard", (req, res) => {
+  res.render("adminView/totalAppointment.ejs");
 });
 router.get("/add_doctor", (req, res) => {
   res.render("adminView/adddoctor.ejs");
-});
+}); */
 router.get("/totol_appointment", adminController.home);
 
 router.post("/doctor/add-doctor", adminController.addDoctor);

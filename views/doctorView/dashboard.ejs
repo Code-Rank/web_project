@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include("../partial/head.ejs")%>
+        <style>
+            body {
+                padding: 0%;
+                margin: 0%;
+            }
+            #top_menu li a {
+                color: white;
+            }
+            .margin_item {
+                margin-left: 60%;
+            }
+            .margin_item li {
+                margin-left: 10px;
+            }
+            .orange_text_color {
+                color: #fd6342;
+            }
+            .gray_text_color {
+                color: #252b3b;
+            }
+            .orange_text_color {
+                color: #fd6342;
+            }
+            .gray_background_color {
+                background: #252b3b;
+            }
+            .orange_background_color {
+                background: #fd6342;
+            }
+            
+            
+            
+         
+            .sign_up {
+                padding-left: 3vw;
+                padding-right: 3vw;
+                padding-top: 0.6vw;
+                padding-bottom: 0.6vw;
+
+                background: #fd6342;
+                border-color: #fd6342;
+
+                border-radius: 2px;
+                font-weight: bold;
+            }
+            
+            #top_menu li a:hover {
+                color: #fd6342;
+            }
+            hr{
+                width: 40%;
+                background: #fd6342;
+                height: 3px;
+            }
+          
+            .form_input:focus{
+               
+                outline-color: #fd6342;
+            }
+            form{
+                margin-top: 10%;
+            }
+            form input{
+                margin: 10px;
+            }
+            button[type=submit]{
+                padding: 7px;
+                border: #fd6342;
+            }
+
+        </style>
+    </head>
+    <body>
+        <%- include("../partial/top_menu.ejs")%>
+        <br />
+        <br />
+        <br><br><br><br>
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                
+              </div>
+      
+              <!--Appointment and bills-->
+              <div class="col-12 mt-5">
+                <!--Cards-->
+      
+                <div class="row">
+                  <div class="col-md-4">
+                    <div
+                      class="card text-white orange_background_color mb-3"
+                      style="max-width: 20rem"
+                    >
+                      <div class="card-header">Total Patients</div>
+                      <div class="card-body">
+                        <h5 class="card-title">Patients</h5>
+                        <p class="card-text"><%=total_pateint%></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div
+                      class="card text-white orange_background_color mb-3"
+                      style="max-width: 20rem"
+                    >
+                      <div class="card-header">Total Appointments</div>
+                      <div class="card-body">
+                        <h5 class="card-title">Total Appointmemnt</h5>
+                        <p class="card-text"><%=total_appointment%></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div
+                      class="card text-white orange_background_color mb-3"
+                      style="max-width: 20rem"
+                    >
+                      <div class="card-header">Pending Appointments</div>
+                      <div class="card-body">
+                        <h5 class="card-title">Pending Appointments</h5>
+                        <p class="card-text"><%=total_pending_appointment%></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div
+                      class="card text-white  mb-3 orange_background_color"
+                      style="max-width: 20rem"
+                    >
+                      <div class="card-header">Complete Appointments</div>
+                      <div class="card-body">
+                        <h5 class="card-title">Complete Appointments</h5>
+                        <p class="card-text"><%=total_complete_appointment%></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div
+                      class="card text-white  mb-3 orange_background_color"
+                      style="max-width: 20rem"
+                    >
+                      <div class="card-header">Cancel Appointments</div>
+                      <div class="card-body">
+                        <h5 class="card-title">Cancel Appointments</h5>
+                        <p class="card-text"><%=total_cancel_appointment%></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div
+                      class="card text-white  mb-3 orange_background_color"
+                      style="max-width: 20rem"
+                    >
+                      <div class="card-header">Total Earning</div>
+                      <div class="card-body">
+                        <h5 class="card-title">Total Earning</h5>
+                        <p class="card-text">$<%=total_payment%></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<br><br><br>
+        <div class="gray_background_color">
+            <%- include("../partial/footer.ejs")%>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6/index.global.min.js"></script>
+  
+    
+    
+ <%- include("../partial/head.ejs") %> 
+    <title>Document</title>
+</head>
+<style>
+   body {
+                padding: 0%;
+            margin: 0%;
+            }
+            #top_menu li a {
+                color: white;
+            }
+            .margin_item {
+                margin-left: 60%;
+            }
+            .margin_item li {
+                margin-left: 10px;
+            }
+            .orange_text_color {
+                color: #fd6342;
+            }
+            .gray_text_color {
+                color: #252b3b;
+            }
+            .orange_text_color {
+                color: #fd6342;
+            }
+            .gray_background_color {
+                background: #252b3b;
+            }
+            .orange_background_color {
+                background: #fd6342;
+            }
+         
+            
+           
+            .sign_up {
+                padding-left: 3vw;
+                padding-right: 3vw;
+                padding-top: 0.6vw;
+                padding-bottom: 0.6vw;
+
+                background: #fd6342;
+                border-color: #fd6342;
+
+                border-radius: 2px;
+                font-weight: bold;
+            }
+         
+          
+            #top_menu li a:hover{
+                color: #fd6342;
+            }
+            #calendar{
+              width: 90%;
+              margin-left: 5%;
+            }
+            #btn{
+              padding-left: 2vw;
+                padding-right: 2vw;
+                padding-top: 0.6vw;
+                padding-bottom: 0.6vw;
+              background:#fd6342;
+              color:white;
+            }
+
+
+        </style>
+
+
+<body>
+       <%- include("../partial/top_menu.ejs")%>  
+       <br><br><br>
+       <%if(record_update_message.length>0){%>
+        <div class="alert alert-success " role="alert" style="width:75%;margin-left: 12.5%;">
+            <div>
+                
+                <%=record_update_message%> 
+            </div>
+          </div>
+        <%}%>
+     
+       <div id="calendar"></div>
+      <br><br>
+    <div class="container">
+      <table  class="table table-bordered table-striped table-sm" style="width:100%">
+        <thead>
+            <tr>
+                
+                <th>Pateint name</th>
+                <th>Appointment date</th>
+                <th>Appointment time</th>
+                <th>Status</th>
+                
+                <th>Action</th>
+                
+               
+               
+            </tr>
+        </thead>
+        <tbody>
+          
+          <%appointment_data.forEach((data,index,array)=>{%>  
+          <tr>
+                  <%get_doc=patient_data.find((pateint,index,arary)=>{if(pateint._id==data.pateint_id){return pateint; }})%>
+
+               <td>
+                
+                <%=get_doc.first_name%> <%=get_doc.last_name%>
+                
+               </td>
+                <td><%=data.date%>  </td>
+                <td><%=data.time%></td>
+                <td><p class=""><%=data.status%></p></td>
+                
+                <td><a href="/user/doctor_profile?id=<%=data.doctor_id%>" class="btn" id="btn">View profile</a>&nbsp;<a href="/doctor/update_status?id=<%=data._id%>&&status=complete" class="btn" id="btn">Complete</a></td>
+            </tr>
+          <%})%>
+            
+           
+          
+        
+           
+
+    </table>
+    </div>
+    <br><br><br>
+   
+    <div class="gray_background_color">
+        <%- include("../partial/footer.ejs")%>
+    </div> 
+    
+
+
+    <script>
+            
+    </script>
+</body>
+
+
+
+</html>
+<script>
+      let event=[];
+   
+
+     
+      let n=<%- JSON.stringify(appointment_data)%>;
+
+      for(let i=0;i<n.length;i++){
+        let obj={};
+          obj.title="Paiteints Appointments";
+          obj.start=n[i].date;
+          obj.color='#fd6342';
+          event.push(obj);
+          
+
+
+      }
+      console.log(event);
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+      },
+      initialDate: new Date(),
+      navLinks: true, // can click day/week names to navigate views
+      businessHours: true, // display business hours
+      editable: true,
+      selectable: true,
+      events: event,
+    });
+
+    calendar.render();
+  });
+</script>
+
+<script>
+$(document).ready(function () {
+    $('.table').DataTable({
+        scrollY: '200px',
+        scrollCollapse: true,
+        paging: true,
+    });
+});
+
+</script>
+
+</html>

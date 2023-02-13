@@ -52,10 +52,13 @@ const login= async(req,res)=>
           console.log(req.session.user_type); */
           if(req.session.user_type=="admin"){
             req.flash("message","login successfully");
-            res.redirect("../admin/dashboard"); 
+            res.redirect("../admin/totol_appointment"); 
           }else if(req.session.user_type=="Patient"){
             req.flash("message","login successfully");
             res.redirect("../user/user_appointment");
+          }else if(req.session.user_type=="Doctor"){
+            req.flash("message","login successfully");
+            res.redirect("../doctor/dashboard");
           }
           /* req.flash("message","login successfully");
           res.redirect("../user/user_appointment"); */

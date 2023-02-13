@@ -2,6 +2,7 @@ import express from "express";
 import authRouters from "./routes/authRouter/authRoutes.js";
 import userRouters from "./routes/userRoute/userRoutes.js";
 import adminRoutes from "./routes/adminRoute/adminRoutes.js";
+import doctorRoutes from "./routes/doctorRoute/doctorRoutes.js"
 import mongoose  from "mongoose";
 import {connection}  from "./database/db.js";
 import flash from "connect-flash";
@@ -67,6 +68,7 @@ app.get("/signup",(req,res)=>{
 app.use("/auth",authRouters);
 app.use("/user",userRouters);
 app.use("/admin",adminRoutes);
+app.use("/doctor",doctorRoutes);
 
 
 app.listen(port,(req,res)=>{
