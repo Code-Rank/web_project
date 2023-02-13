@@ -111,67 +111,81 @@
                 <div class="col-md-12">
                     <div class="d-flex flex-row justify-content-between align-items-center filters">
                         <h6>Showing <%=result.length%> records</h6>
-                        <div class="right-sort">
+                       <!--  <div class="right-sort">
                             <div class="sort-by">
-                                <form action="" method="get">
+                                <form action="/user/doctors" method="get">
                                     
-                                    <input type="text" name="" id="" placeholder="First name">
-                                    <input type="text" name="" id="" placeholder="Last name">
-                                    <input type="text" name="" id="" placeholder="City">
+                                    <input type="text" name="first_name" id="first_name" placeholder="First name" >
+                                    <input type="text" name="last_name" id="last_name" placeholder="Last name">
+                                    <input type="text" name="city" id="city" placeholder="City">
                                     <input type="submit" class="btn" id="btn" name="Search" >
                                 </form>
                             </div>
-                        </div>
+                        </div> --> 
                     </div>
                     <br>
                 </div>
             </div>
 
             <div class="col-md-12">
-               <%result.forEach((result)=>{%>
-                <div class="p-card bg-white p-2 rounded px-3 cards">
-                    <div class="row">
-                        <div class="col-2" style="">
-                            <img src="/img/woman.png" class="rounded float-left" width="100px" />
+
+                <%let item=5 * Number(page)%>
+               
+                <%for(let i=item-5;i<item;i++){%>
+                    <%if(i<result.length){%>
+                    <div class="p-card bg-white p-2 rounded px-3 cards">
+                        <div class="row">
+                            <div class="col-2" style="">
+                                <img src="/img/woman.png" class="rounded float-left" width="100px" />
+                            </div>
+
+                            <div class="col-7">
+                                <h3 style="color: #fd6342;"><%=result[i].first_name%> <%=result[i].last_name%></h3>
+                                <p style="text-align: justify;">
+                                    Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviewsIncrease confidence with
+                                    trustpilot reviews
+                                </p>
+
+                                <div class="rating"></div>
+                            </div>
                         </div>
-
-                        <div class="col-7">
-                            <h3 style="color: #fd6342;"><%=result.first_name%> <%=result.last_name%></h3>
-                            <p style="text-align: justify;">
-                                Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviews Increase confidence with trustpilot reviewsIncrease confidence with
-                                trustpilot reviews
-                            </p>
-
-                            <div class="rating"></div>
+                        <div class="d-flex justify-content-between stats">
+                            <div></div>
+                            <div class="align-items-center">
+                                <a href="/user/doctor_profile?id=<%=result[i]._id%>" class="btn" id="view_profile">View profile</a><br />
+                                <a href="/user/create_appointment?id=<%=result[i]._id%>"" class="btn" id="booking">Booking</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-between stats">
-                        <div></div>
-                        <div class="align-items-center">
-                            <a href="/user/doctor_profile?id=<%=result._id%>" class="btn" id="view_profile">View profile</a><br />
-                            <a href="/user/create_appointment?id=<%=result._id%>"" class="btn" id="booking">Booking</a>
-                        </div>
-                    </div>
-                </div>
-                <br>
-               <%});%>
-                
-                
+                    <br>
+                    <%}%>
+             
+                <%}%>
                 <br>
                
                 <div class="d-flex justify-content-end text-right mt-2">
                     <nav>
                         <ul class="pagination">
                             <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                                 
+                                  <a class="page-link" aria-label="Previous" href="/user/doctors?page=<%=Number(page)-1%>"><span aria-hidden="true">&laquo;</span></a>
+
+                                
                             </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <%var counter =1;%>
+                            <%if(result.length>5){%>
+                                <%for(let i=0;i<result.length;i=i+5){%>
+                                
+                                <li class="page-item"><a class="page-link" href="/user/doctors?page=<%=counter%>"> <%=counter%></a></li>
+                            
+                                <% counter++;%>
+                                <%}%>
+                            <%}else{%>
+                                <li class="page-item"><a class="page-link" href="/user/doctors?page=<%=counter%>"> <%=counter%></a></li>
+                            <%}%>
                             <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+
+                                <a class="page-link" aria-label="Next" href="/user/doctors?page=<%=Number(page)+1%>"><span aria-hidden="true">&raquo;</span></a>
                             </li>
                         </ul>
                     </nav>

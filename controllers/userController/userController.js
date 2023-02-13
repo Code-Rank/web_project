@@ -39,13 +39,17 @@ const user_appointment_view=async (req,res)=>{
 
 
 const doctorView=  (req,res)=>{
-
+let page=1;
+if(req.query.page){
+page=req.query.page;
+}
 try{
-    usersModel.find({user_type:"Doctor"},"first_name last_name email",(error,result)=>{
+    let {first_name,last_name,city}=req.query;
+    usersModel.find({user_type:"Doctor"},(error,result)=>{
 
         if(result){
             console.log(result);
-            res.render('userView/doctors.ejs',{result:result});
+            res.render('userView/doctors.ejs',{result:result,page:page});
         }
     });
 

@@ -1,15 +1,15 @@
 import express from "express";
 import * as users from "../../controllers/userController/userController.js";
 import multer from "multer";
+const router=express.Router();
 
-
-/* router.use((req,res,next)=>{
+/*  router.use((req,res,next)=>{
   if(req.session.user_type!="Pateint"){
    res.redirect("/login");
   }else{
     next();
   }
-}) */
+})  */
 // SET STORAGE
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -21,7 +21,7 @@ var storage = multer.diskStorage({
     
   })
   var upload = multer({ storage: storage });
-  const router=express.Router();
+  
 
 
 
