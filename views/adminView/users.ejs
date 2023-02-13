@@ -1,175 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap4.min.css" />
+        <%- include("../partial/head.ejs") %>
+        <title>Document</title>
+    </head>
+    <style>
+        body {
+            padding: 0%;
+            margin: 0%;
+        }
+        #top_menu li a {
+            color: white;
+        }
+        .margin_item {
+            margin-left: 60%;
+        }
+        .margin_item li {
+            margin-left: 10px;
+        }
+        .orange_text_color {
+            color: #fd6342;
+        }
+        .gray_text_color {
+            color: #252b3b;
+        }
+        .orange_text_color {
+            color: #fd6342;
+        }
+        .gray_background_color {
+            background: #252b3b;
+        }
+        .orange_background_color {
+            background: #fd6342;
+        }
 
-    <%- include("../partial/head.ejs") %>
-    <title>Document</title>
-  </head>
-  <style>
-    body {
-      padding: 0%;
-      margin: 0%;
-    }
-    #top_menu li a {
-      color: white;
-    }
-    .margin_item {
-      margin-left: 60%;
-    }
-    .margin_item li {
-      margin-left: 10px;
-    }
-    .orange_text_color {
-      color: #fd6342;
-    }
-    .gray_text_color {
-      color: #252b3b;
-    }
-    .orange_text_color {
-      color: #fd6342;
-    }
-    .gray_background_color {
-      background: #252b3b;
-    }
-    .orange_background_color {
-      background: #fd6342;
-    }
+        .sign_up {
+            padding-left: 3vw;
+            padding-right: 3vw;
+            padding-top: 0.6vw;
+            padding-bottom: 0.6vw;
 
-    .sign_up {
-      padding-left: 3vw;
-      padding-right: 3vw;
-      padding-top: 0.6vw;
-      padding-bottom: 0.6vw;
+            background: #fd6342;
+            border-color: #fd6342;
 
-      background: #fd6342;
-      border-color: #fd6342;
+            border-radius: 2px;
+            font-weight: bold;
+        }
 
-      border-radius: 2px;
-      font-weight: bold;
-    }
+        #top_menu li a:hover {
+            color: #fd6342;
+        }
+        #calendar {
+            width: 90%;
+            margin-left: 5%;
+        }
+        #booking {
+            padding-left: 3vw;
+            padding-right: 3vw;
+            padding-top: 0.6vw;
+            padding-bottom: 0.6vw;
+            background: #fd6342;
+            color: white;
+            margin: 3px;
+        }
+        #view_profile {
+            padding-left: 2vw;
+            padding-right: 2vw;
+            padding-top: 0.6vw;
+            padding-bottom: 0.6vw;
+            border: 1px solid #fd6342;
+        }
+        #view_profile:hover {
+            padding-left: 2vw;
+            padding-right: 2vw;
+            padding-top: 0.6vw;
+            padding-bottom: 0.6vw;
+            border: 1px solid #fd6342;
+            background: #fd6342;
+            color: white;
+        }
+        .cards {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #btn {
+            padding-left: 2vw;
+            padding-right: 2vw;
+            padding-top: 0.6vw;
+            padding-bottom: 0.6vw;
+            border: 1px solid #fd6342;
+            background: #fd6342;
+            color: white;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
 
-    #top_menu li a:hover {
-      color: #fd6342;
-    }
-    #calendar {
-      width: 90%;
-      margin-left: 5%;
-    }
-    #booking {
-      padding-left: 3vw;
-      padding-right: 3vw;
-      padding-top: 0.6vw;
-      padding-bottom: 0.6vw;
-      background: #fd6342;
-      color: white;
-      margin: 3px;
-    }
-    #view_profile {
-      padding-left: 2vw;
-      padding-right: 2vw;
-      padding-top: 0.6vw;
-      padding-bottom: 0.6vw;
-      border: 1px solid #fd6342;
-    }
-    #view_profile:hover {
-      padding-left: 2vw;
-      padding-right: 2vw;
-      padding-top: 0.6vw;
-      padding-bottom: 0.6vw;
-      border: 1px solid #fd6342;
-      background: #fd6342;
-      color: white;
-    }
-    .cards {
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    }
-    #btn {
-      padding-left: 2vw;
-      padding-right: 2vw;
-      padding-top: 0.6vw;
-      padding-bottom: 0.6vw;
-      border: 1px solid #fd6342;
-      background: #fd6342;
-      color: white;
-    }
-    a:hover {
-      text-decoration: none;
-    }
-  </style>
+    <body>
+        <%- include("../partial/top_menu.ejs")%>
+        <br />
+        <br />
+        <br />
 
-  <body>
-    <%- include("../partial/top_menu.ejs")%>
-    <br />
-    <br />
-    <br />
-
-    <div class="container mt-5 pt-5">
-      <div class="row">
-        <div class="col">
-          <div class="card" style="width: 19rem">
-            <div class="mt-5 ms-3">
-              <img
-                src="/img/profile.png"
-                class="float-left"
-                width="100"
-                alt="..."
-              />
+        <div class="container mt-5 pt-5">
+            <div class="row">
+                <div class="col-2">
+                    <div class="card" style="width: 19rem">
+                      <div class="mt-5 ms-3">
+                        <img
+                          src="/img/profile.png"
+                          class="float-left"
+                          width="100"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title"><%=user.first_name%> <%=user.last_name%></h5>
+                        <p class="card-text">/ Admin</p>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <!-- <a href="dashboard" class="list-group-item"
+                          ><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Request</a
+                        >
+                        <a href="add_doctor" class="list-group-item"
+                          ><i class="fa fa-user-plus" aria-hidden="true"></i> Add
+                          Doctor</a
+                        > -->
+                        <a
+                          href="totol_appointment"
+                          class="list-group-item"
+                          
+                          ><i style="font-size:20px" class="fa">&#xf0e4;</i>
+                          dashboard
+                          </a
+                        >
+                        <a href="user" class="list-group-item" style="background: #fd6342"
+                          ><i class="fa fa-list" aria-hidden="true"></i>&nbsp;User</a
+                        >
+                        
+                      </ul>
+                    </div>
+                  </div>
+                <div class="col-10">
+                    <div class="container" style="margin-left: 20%;">
+                        <table id="example" class="table table-striped table-bordered" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                  <th>name</th>
+                                  <th>Email</th>
+                                  <th>City</th>
+                                  <th>User type</th>
+                                  <th>Status</th>
+                                  <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              <%result.forEach((data)=>{%>
+                                <tr>
+                                    <td><%=data.first_name%> <%=data.last_name%></td>
+                                    <td><%=data.email%></td>
+                                    <td><%=data.city%></td>
+                                    <td><%=data.user_type%></td>
+                                    <td><%=data.status%></td>
+                                    <td><a href="/admin/app_reject?id=<%=data._id%>&&status=Reject" class="btn btn-danger">Reject</a>&nbsp;
+                                    <a href="/admin/app_accept?id=<%=data._id%>&&status=Accept" class="btn btn-success">Accept</a>&nbsp;
+                                    <a href="/user/doctor_profile?id=<%=data._id%>" class="btn btn-primary">View</a></td>
+                                </tr>
+                              <%})%>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-              <h5 class="card-title">Muhammad Umar</h5>
-              <p class="card-text">/ Amin</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <a href="dashboard" class="list-group-item"
-                ><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Request</a
-              >
-              <a href="add_doctor" class="list-group-item"
-                ><i class="fa fa-user-plus" aria-hidden="true"></i> Add
-                Doctor</a
-              >
-              <a href="user" class="list-group-item" style="background: #fd6342"
-                ><i class="fa fa-list" aria-hidden="true"></i>&nbsp;User</a
-              >
-              <a href="totol_appointment" class="list-group-item"
-                ><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Total
-                Appointment</a
-              >
-            </ul>
-          </div>
         </div>
-        <div class="col-8">
-          <table class="table">
-            <thead class="text-white" style="background: #fd6342">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Role</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <%var i=1%> <% data.forEach((item)=> { %>
-              <tr>
-                <th scope="row"><%= i++ %></th>
-                <td><%= item.name %></td>
-                <td><%= item.email %></td>
-                <td><%= item.specialist %></td>
-                <td>Active</td>
-              </tr>
-              <%}) %>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
 
-    <br /><br /><br />
-    <div class="gray_background_color">
-      <%- include("../partial/footer.ejs")%>
-    </div>
-  </body>
+        <br />
+        <br />
+        <br />
+        <div class="gray_background_color">
+            <%- include("../partial/footer.ejs")%>
+            <script>
+                $(document).ready(function () {
+                    $("#example").DataTable();
+                });
+            </script>
+            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap4.min.js"></script>
+        </div>
+    </body>
 </html>

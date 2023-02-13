@@ -11,6 +11,7 @@ import session from "express-session";
 
 import path from "path";
 import ejs from "ejs";
+import { Console } from "console";
 
 
 const app =express();
@@ -43,12 +44,15 @@ app.use(express.urlencoded({extended:true}));
 app.use(function(req, res, next) {
     //res.locals.user["user_type"] = req.session.user_type;
     res.locals.user ={
+        first_name:req.session.first_name,
+        last_name:req.session.last_name,
         email:req.session.email,
         user_type:req.session.user_type,
         user_id:req.session.id,
         new_image:req.session.new_image,
         old_image:req.session.old_image
     };
+    console.log(res.locals.user);
     next();
   });
 app.get("/",(req,res)=>{

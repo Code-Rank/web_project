@@ -44,12 +44,21 @@ const login= async(req,res)=>
           req.session.user_type=result[0].user_type;
           req.session.user_id=result[0]._id;
           req.session.old_image=result[0].image;
+          req.session.first_name=result[0].first_name;
+          req.session.last_name=result[0].last_name;
           //console.log(req.session.image);
           /* console.log(result);
           console.log(req.session.email);
           console.log(req.session.user_type); */
-          req.flash("message","login successfully");
-          res.redirect("../user/user_appointment");
+          if(req.session.user_type=="admin"){
+            req.flash("message","login successfully");
+            res.redirect("../admin/dashboard"); 
+          }else if(req.session.user_type=="Patient"){
+            req.flash("message","login successfully");
+            res.redirect("../user/user_appointment");
+          }
+          /* req.flash("message","login successfully");
+          res.redirect("../user/user_appointment"); */
    }else{
             req.flash("message","login attampt faild");
             res.redirect("../login");

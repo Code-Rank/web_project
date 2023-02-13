@@ -11,4 +11,4 @@ const appointment=mongoose.Schema({
 
 const appointmentModel=mongoose.model("appointment",appointment);
 
-export {appointmentModel}
+export { appointmentModel}

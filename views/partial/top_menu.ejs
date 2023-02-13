@@ -81,21 +81,34 @@
                   </div>
                 
             </ul>
-        <%}else{%>
+        <%}else if(user.user_type=="admin"){%>
             <ul class="navbar-nav mr-auto margin_item" id="top_menu">
            
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Appointments </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Doctors</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>
+                
+                
+                <div class="dropdown" style="margin-left: 510%;">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                     
+                      <a class="dropdown-item" href="/auth/logout">Log out</a>
+                    </div>
+                  </div>
+                
+            </ul>
+        <%}else{%>
+            <style>
+#top_menu{
+    margin-left: 85%;
+}
+            </style>
+            <ul class="navbar-nav mr-auto margin_item" id="top_menu" >
+             
+                
                 &nbsp; &nbsp; &nbsp;
-                <li class="nav-item">
-                    <a class="nav-link" href="">Sign in</a>
+                <li class="nav-item" >
+                    <a class="nav-link" href="/signup">Sign up</a>
                 </li>
              
                 

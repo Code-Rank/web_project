@@ -14,6 +14,7 @@ const users=mongoose.Schema({
       image:{type:String},
       councelling_fee:{type:String},
       booking_fee:{type:String},
+      status:{type:String},
       password:{type:String},
 
 });

@@ -119,27 +119,28 @@
               />
             </div>
             <div class="card-body">
-              <h5 class="card-title">Muhammad Umar</h5>
-              <p class="card-text">/ Amin</p>
+              <h5 class="card-title"><%=user.first_name%> <%=user.last_name%></h5>
+              <p class="card-text">/ Admin</p>
             </div>
             <ul class="list-group list-group-flush">
-              <a href="dashboard" class="list-group-item"
+              <!-- <a href="dashboard" class="list-group-item"
                 ><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Request</a
               >
               <a href="add_doctor" class="list-group-item"
                 ><i class="fa fa-user-plus" aria-hidden="true"></i> Add
                 Doctor</a
-              >
-              <a href="user" class="list-group-item"
-                ><i class="fa fa-list" aria-hidden="true"></i>&nbsp;User</a
-              >
+              > -->
               <a
                 href="totol_appointment"
                 class="list-group-item"
                 style="background: #fd6342"
-                ><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Total
-                Appointment</a
+                ><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;dashboard
+                </a
               >
+              <a href="user" class="list-group-item"
+                ><i class="fa fa-list" aria-hidden="true"></i>&nbsp;User</a
+              >
+              
             </ul>
           </div>
         </div>
@@ -155,7 +156,7 @@
                     <i class="fa fa-list" aria-hidden="true"></i> Total Doctors
                   </h3>
                   <h3 class="text-center m-5 text-white">
-                    <%= totalDoctors %>
+                    <%= total_doctor %>
                   </h3>
                 </div>
               </div>
@@ -166,7 +167,7 @@
                   <h3 class="card-title text-white">
                     <i class="fa fa-list" aria-hidden="true"></i> Total Patients
                   </h3>
-                  <h3 class="text-center m-5 text-white">671</h3>
+                  <h3 class="text-center m-5 text-white"><%= total_patient %></h3>
                 </div>
               </div>
             </div>
@@ -176,7 +177,7 @@
                   <h3 class="card-title text-white">
                     <i class="fa fa-list" aria-hidden="true"></i> Total Payments
                   </h3>
-                  <h3 class="text-center m-5 text-white">671</h3>
+                  <h3 class="text-center m-5 text-white"><%= total_payment %></h3>
                 </div>
               </div>
             </div>
@@ -187,7 +188,7 @@
                     <i class="fa fa-list" aria-hidden="true"></i> Total
                     Appointments
                   </h3>
-                  <h3 class="text-center m-5 text-white">671</h3>
+                  <h3 class="text-center m-5 text-white"><%= total_appointment %></h3>
                 </div>
               </div>
             </div>
